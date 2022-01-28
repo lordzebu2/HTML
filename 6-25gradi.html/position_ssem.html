@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="k">
+<head>
+    <title>Document</title>
+    <style>     
+        #wrap, #wrap2, #wrap3{            
+            margin-left: 100px;
+            border: 1px solid blue;
+        }
+        #wrap2{
+            position: relative;
+        }
+        #wrap3{
+            position: absolute;
+        }
+
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            /* 부모가 abslute, relative 가 아니면*/
+            /* 본인또는 부모를 싸고 있는 다른 
+                abslute, relative 기준으로한다.
+                없으면 body 기준
+            */
+        }
+
+        /*
+            abslute는 공간을 안먹습니다.
+            부모태그의 크기의 영향을 안받습니다.
+            대신 좌표의 기준점이 된다.
+        */
+        #box2{
+            left: 0;
+        }
+        
+        #box3{
+            left: 0;
+        }
+        /*
+            relative는 기본적인속성은
+            static(기본)-아무속성도 안줬을때
+            랑 같습니다.
+            다만, 자식이 absolute 또는 relative일때
+            좌표의 기준점이 된다.
+            static + absolute
+            => left, top 이런게 먹는다.
+        */
+
+    </style>
+</head>
+<body>
+    <!-- <div id="wrap">
+        속성 :static (기본)
+        <div class="box1" id="box11"></div>
+    </div> -->
+    <!-- <div id="wrap2">
+        속성 : relative
+        <div class="box1" id="box22"></div>
+    </div> -->
+    <div id="wrap3">
+        속성 : absolute
+        <div class="box1" id="box33"></div>
+    </div>
+</body>
+</html>

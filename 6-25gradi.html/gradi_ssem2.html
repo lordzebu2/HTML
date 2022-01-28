@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>    
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;            
+        }
+        .div1{
+            background-image: radial-gradient(red, yellow, green);
+            background-image: -moz-radial-gradient(red, yellow, green);
+            background-image: -o-radial-gradient(red, yellow, green);
+        }
+        .div2{
+            background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+        }
+
+        .div3{
+            /* background-image: radial-gradient(circle, red, yellow, green); 원 */
+            background-image: radial-gradient(ellipse, red, yellow, green);/*타원*/
+        }
+        /*
+            그라디언트 끝 모양
+            closest-side            끝모양이 그라디언트 중앙에서 가장 가까운 면으로 흐려짐
+            closest-corner          끝모양이 그라디언트 중앙에서 가장 가까운 모서리로 흐려짐
+            farthest-side           끝모양이 그라디언트 중앙에서 가장 먼 면으로 흐려짐
+            farthest-corner         끝모양이 그라디언트 중앙에서 가장 먼 모서리로 흐려짐-기본값
+
+        */
+        .div4{
+            background-image: radial-gradient(closest-side , red, yellow, green);
+        }
+        .div5{
+            /* background-image: radial-gradient(closest-corner at 10% 10%, red, yellow, green); */
+            background-image: radial-gradient(closest-corner at 10% bottom, red, yellow, green);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    <div class="div4"></div>
+    <div class="div5"></div>
+</body>
+</html>

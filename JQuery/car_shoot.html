@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8">
+      <title>Untitled</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <style>
+         .wrap{
+            position: relative;
+         }
+         .main{
+            border: 1px solid black;
+            width: 200px;
+            height: 100px;
+            bottom: 0px;
+         }
+         .c{
+            position: absolute;
+            left: 300px;
+         }
+         .m{
+            position: absolute;
+            left: 400px;
+            
+            
+         }        
+      </style>
+      <script>
+         $(document).ready(function(){
+            $("button#up").click(function(){
+               $("img").animate({
+                  top: '-=50px'
+               })
+            })
+            $("button#left").click(function(){
+               $("img").animate({
+                  left: '-=50px'
+               })
+            })
+            $("button#down").click(function(){
+               $("img").animate({
+                  top: '+=50px'
+               })
+            })
+            $("button#right").click(function(){
+               $("img").animate({
+                  left: '+=50px'
+               })
+            })
+            $("button#shoot").click(function(){
+               $("img.m").animate({
+                  left: '+=3000px'
+                  
+               })
+            })
+
+         })
+
+
+      </script>
+   </head>
+   <body>
+      <div class="wrap">
+         <div class="main">
+            <div></div>         
+            <button class="bt" id="up">위</button>
+            <div></div>
+            <button class="bt" id="left">왼쪽</button>
+            <button class="bt" id="down">아래</button>
+            <button class="bt" id="right">오른쪽</button>
+         </div>
+         <button id="shoot">발사</button>
+         <img src="car.png" class="c" id="mycar">
+         <img src="미사일.png" class="m">
+      </div>
+      
+   </body>
+</html>

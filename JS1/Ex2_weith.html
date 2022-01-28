@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8">
+      <title>Untitled</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+   </head>
+   <body>
+      <script>
+          var h = prompt("당신의 키는?");
+          var w = prompt("당신의 몸무계는?");
+
+          var x = (h-100)*0.9;
+          var y = w - x;
+
+          var result = w > x ?"적정 체중은 "+x+"kg 이며, 현재 적정 체중에서 "+y.toFixed(2)+"kg 초과했습니다.":"정상체중 입니다.";
+
+          
+          document.write("신장"+h+"cm <br>");
+          document.write("체중"+w+"kg <br>");
+          document.write("적정체중"+x+"kg <br>");
+          document.write(result);
+      </script>
+   </body>
+</html>

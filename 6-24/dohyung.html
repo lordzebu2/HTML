@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>    
+    <title>Document</title>
+    <style>
+        #wrap{
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            background-color: pink;
+        }
+
+        div{
+            width: 200px;
+            height: 200px;
+            margin-left: 20px;
+            margin-top: 20px;
+            border: 3px solid black;
+            display: inline-block;
+        }
+
+        #wrap div:nth-child(1){
+            background-color: red;
+        }
+        #wrap div:nth-child(2){
+            background-color: blue;
+            border-radius: 50%;
+        }
+        #wrap div:nth-child(3){
+            background-color: green;
+            border-radius: 0 25px 0 25px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

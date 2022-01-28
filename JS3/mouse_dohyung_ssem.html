@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            #wrap{
+                border: 1px solid black;
+                width: 300px;
+                height: 300px;
+                position: relative;
+            }
+            .box{
+                border: 1px solid black;
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap" onmousedown="down(event)" onmousemove="move(event)" onmouseup="up(event)"></div>
+        <div id="wh"></div>
+        <script>            
+            var box;
+            var width;
+            var height;
+            var x;
+            var y;
+            var isDown;
+
+            function down(e){
+                x = e.offsetX;
+                y = e.offsetY;
+                box = document.createElement("div");                
+                box.setAttribute("class","box");
+                box.style.left=x+"px";
+                box.style.top=y+"px";
+                document.getElementById("wrap").appendChild(box);
+                isDown=true;                
+            }
+            function move(e){
+                if(isDown){
+                    box.style.width=(e.offsetX-x)+"px";
+                    box.style.height=(e.offsetY-y)+"px";
+                    document.getElementById("wh").innerHTML=(box.style.width+":"+box.style.height);
+                }
+            }
+            function up(e){
+                isDown=false;
+            }
+        </script>
+    </body>
+</html>

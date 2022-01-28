@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <title>Document</title>
+
+    <style>
+        *,html,body{
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap{
+            width: 1080px;
+            height: 500px;
+            margin: 0 auto;            
+            border: 1px solid black;          
+        }
+       
+        .box{
+            float: left;
+            margin-top: 30px;
+            margin-left: 50px;
+        }
+
+        #img1{
+            background-image: url(포로리야.png);
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+        .img1-2{
+            
+            background-image: url(너부리야.png);
+            background-repeat: no-repeat;           
+            width: 200px;
+            height: 200px;
+            position: absolute;            
+            left: 0px;
+            opacity: 0;
+            transition: all 2s;
+        }
+        .img1-2:hover{
+            opacity: 1;
+        }
+
+
+        #img2{
+            background-image: url(포로리야.png);
+            width: 200px;
+            height: 200px;
+            transition: all 2s;
+            
+        }
+        #img2:hover{
+            border: 10px solid red;
+            box-sizing: border-box;          
+           
+        }
+
+
+        #img3{
+            background-image: url(포로리야.png);
+            width: 200px;
+            height: 200px;
+            opacity: 1;
+            transition: all 2s;
+            color:transparent;
+            text-align: center;
+            font-size: 0px;
+            color: red;
+                      
+        }
+       
+        #img3:hover{
+            opacity: 0.5;
+            font-size: 25px;           
+        }
+
+        #img4{
+            background-image: url(포로리야.png);
+            width: 200px;
+            height: 200px;
+            position: relative;
+
+        }
+        #img4>div{
+            width: 200px;
+            height: 200px;
+            opacity: 0.5;
+            background-color: red;
+            position: absolute;
+            top: 50%;
+            border-radius: 50%;
+            transform: rotate(180deg);
+        
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class = "wrap">
+        <div>
+            <div class = "box" id = "img1">
+                <div class = "img1-2"></div>
+            </div>
+            <div class = "box" id = "img2"></div>
+            <div class = "box" id = "img3"><p>너부리야</p></div>
+            <div class = "box" id = "img4"><div></div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- 1다른그림 바뀜
+     2외곽선 진해지기
+     3마우스 올리면 반투명 원형 게이지 차오름
+     4마우스 올리면 그림 반투명 해지면서 글자생김 -->

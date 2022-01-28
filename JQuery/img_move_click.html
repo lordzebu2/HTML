@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <style>
+            *,html,body{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .showbox{
+                border: 3px solid red;
+                width: 200px;
+                height: 200px;
+                position: relative;
+                /* overflow: hidden; */
+            }
+            .movebox{
+                width: 600px;
+                height: 100%;
+                border: 3px solid blue;
+                display: flex;
+                position: absolute;
+            }
+            img{
+                width: 200px;
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="showbox">
+            <div class="movebox">
+                <img src="너부리야.png">
+                <img src="포로리야.png">
+                <img src="미사일.png">
+                <img src="보노보노야.png">
+                <img src="car.png">
+                <img src="포로리야.png">
+            </div>
+        </div>
+
+        <button>클릭</button>
+
+        <script>
+            
+            $(function(){
+                var imgCnt=$(".movebox img").length;// img의 전체 개수를 알수 있다.
+                var imgWidth=$(".showbox").outerWidth();// 쇼박스의 크기
+                var maxLeft = (imgCnt*imgWidth*-1)+imgWidth;
+                $("button").click(function(){
+                    
+                    //alert($(".movebox").css("left"));
+                    //if($(".movebox").css("left")=="-400px"){
+
+                    if( parseInt($(".movebox").css("left")) == maxLeft){
+                        $(".movebox").animate({
+                            left:"0px"
+                        },500);    
+                    }else{
+                        $(".movebox").animate({
+                            left:"-=200px"
+                        },500);
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

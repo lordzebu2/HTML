@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8">
+      <title>Untitled</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+   </head>
+   <body>
+      <script>
+         var mynum = prompt("숫자를 고르세요 1~10");
+         var ran = Math.ceil(Math.random()*5);
+         // var ch=true;
+
+         while(true){
+            document.write(ran);
+            if(mynum>ran){
+               alert("더 작은수를 고르세요");
+               var mynum = prompt("숫자를 고르세요 1~10");              
+            }else if(mynum<ran){
+               alert("더 큰수를 고르세요");
+               var mynum = prompt("숫자를 고르세요 1~10");               
+            }else if(mynum==ran){
+               alert("맞췄습니다.")
+               var ch = confirm("계속 하시겠습니까?");
+               if(ch == true){                  
+                  location.reload();
+                  break;
+               }else{
+                  break;
+               }
+            }
+            
+         
+         
+         }
+
+      </script>
+   </body>
+</html>

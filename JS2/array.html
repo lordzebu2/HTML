@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            #result{
+                width: 200px;
+                height: 200px;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>해더1</h1>
+        <h1>해더2</h1>
+
+        <div id="result"></div>
+
+        <script>
+            //document.getElementById(아이디);
+            //document.getElementsByClassName(클래스명);
+            var h1 = document.getElementsByTagName("h1");// 가져올때 여러개 이므로 배열로 들고 온다.
+            // h1의 값은 배열이다.
+            var box = document.getElementById("result");
+
+            box.innerHTML+=h1[0].innerHTML;
+            box.innerHTML+=h1[1].innerHTML;
+
+            //document.getElementsByClassName
+        </script>
+    </body>
+</html>

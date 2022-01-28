@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8">
+      <title>Untitled</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+      <style>
+          .box{
+            width: 100px;
+            height: 100px;
+            margin-top: 20px;
+            position: absolute;           
+          }
+          .red{
+              background-color: red;
+          }
+          .blue{
+              background-color: blue;
+              top: 120px;
+          }
+          .green{
+              background-color: green;
+              top: 240px;
+          }
+      </style>      
+   </head>
+   <body>
+      <div class= "box red"></div>
+      <div class="box blue"></div>
+      <div class="box green"></div>
+      <button>dd</button>
+      <script>
+
+          $("button").click(function(){
+            $(".red").animate({
+            left:"500px"
+            },1000, function(){
+                $(".blue").animate({
+                    left:"500px"
+                },1000, function(){
+                    $(".green").animate({
+                        left:"500px"
+                    },1000, function(){
+                        $(".green").animate({
+                            left:"0px"
+                        },1000, function(){
+                            $(".blue").animate({
+                                left:"0px"
+                            },1000, function(){
+                                $(".red").animate({
+                                    left:"0px"
+                                },1000)
+                            })
+                        })
+                    })
+                })
+            });
+          })
+          
+         
+         
+      </script>
+
+   </body>
+</html>

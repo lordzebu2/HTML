@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="UTF-8">
+                <title> Learning HTML5! </title> 
+                
+                <style>
+                    *,html,body{
+                        margin: 0;
+                        padding: 0;
+                    }
+                    #wrap{
+                                width:760px;
+                                margin:0 auto
+                        }
+
+                   .boxtop{
+                       width: 100%;
+                       border: 1px solid black;
+                       height: 100px;
+                       color: white;
+                       background-color: darkslategray;
+                   }
+                   .boxmenu>li{
+                       display: inline-block;
+                       list-style-type: none;
+                       height: 50px;
+                       margin-left: 20px;
+                   }
+                   .boxleft{
+                           border: 1px solid black;
+                           width: 70%;
+                           height: 250px;
+                           margin-bottom: 20px;
+                           
+
+                   }
+                   .boxright{
+                           border: 1px solid black;
+                           width: 185px;
+                           height: 215px;
+                           padding-top: 18px;
+                           padding-left: 18px;
+                           
+                   }
+                   .boxright>ul>li{
+                        list-style-type: none;
+                   }
+                   .boxend{
+                           width: 100%;
+                           border: 1px solid black;
+                           height: 50px;      
+                           padding-top: 30px;                                         
+                   }
+
+                   .ad{
+                           background-color: lightgrey;
+                           width: 90%;
+                           height: 130px;
+                           margin-bottom: 20px;
+                   }
+
+                   .boxtop>h1{
+                           margin-top: 20px;
+                           margin-left: 18px;
+                   }
+                   .boxtop>h2{
+                           margin-top: 20px;
+                           margin-right: 18px;
+                   }
+                   article{
+                           
+                           margin-top: 20px;
+                           margin-left: 20px;
+                   }
+                </style>
+
+        </head>
+        <body>
+        <div id="wrap">
+                <header>
+                        <hgroup class = "boxtop">
+                                <h1 style="float: left;">Learning HTML5!</h1>
+                                <h2 style="float: right;">by choi</h2>
+                                <div style="clear: both;"></div>
+                        </hgroup>
+                </header>
+                <nav >
+                        <ul class = "boxmenu">
+                                <li><span>메뉴1</span></li>
+                                <li><span>메뉴2</span></li>
+                                <li><span>메뉴3</span></li>
+                                <li><span>메뉴4</span></li>
+                                <li><span>메뉴5</span></li>
+                                <li><span>메뉴6</span></li>
+                                <li><span>메뉴7</span></li>
+                        </ul>
+                </nav>
+                <section class = "boxleft" style="float: left;">
+                        <article>
+                                <h1> 첫번째 본문의 제목 </h1>
+                                <p> 첫번째 본문의 내용 </p>
+                        </article>
+                        <article>
+                                <h1> 두번째 본문의 제목 </h1>
+                                <p> 두번째 본문의 내용 </p>
+                        </article>
+                        <article>
+                                <h1> 세번째 본문의 제목 </h1>
+                                <p> 세번째 본문의 내용 </p>
+                        </article>
+                </section>
+                <aside class = "boxright" style="float: right;">
+                        <p class="ad">광고</p>
+                        <ul>
+                                <li><b>html5강좌</b></li>
+                                <li><b>html5강좌</b></li>
+                                <li><b>html5강좌</b></li>
+                        </ul>
+                </aside>
+                <footer class = "boxend" style="clear: both;">
+                        <center>Copyright choi</center>
+                </footer>
+        </div>
+        </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function goNext() {
+            location.href = "43-2.html";
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="다음페이지" onclick="goNext()"><br>
+    <a onclick="goNext()">다음페이지</a><br>
+    <div onclick="goNext()">다음페이지</div><br>
+    <input type="button" value="history.forward()" onclick="history.forward()"><br>
+    <input type="button" value="location.replace()" onclick="location.replace('page_move_2.html')">
+
+    //history를 이용하면 페이지를 이동한다는 의미, 페이지의 방문기록을 이용해 다시 이전페이지로 돌아올 수 있음
+    //location.replace는 페이지를 교체한다는 의미, 이전으로 갈수있는 방문기록이 남지않음.
+</body>
+
+</html>

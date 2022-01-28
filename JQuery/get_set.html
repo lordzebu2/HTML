@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                alert("Text: " + $("#test").text());
+            });
+            $("#btn2").click(function () {
+                alert("HTML: " + $("#test").html());
+            });
+            $("#btn3").click(function () {
+                alert("Value: " + $("#test2").val());
+            });
+            $("#btn4").click(function () {
+                $("#test").text("<b>Hello world!</b>");
+            });
+            $("#btn5").click(function () {
+                $("#test").html("<b>Hello world!</b>");
+            });
+            $("#btn6").click(function () {
+                $("#test2").val("Dolly Duck");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <p id="test">This is some <b>bold</b> text in a paragraph.</p>
+    <p>Name: <input type="text" id="test2" value="Mickey Mouse"></p>
+    <button id="btn1">Show Text</button>
+    <button id="btn2">Show HTML</button>
+    <button id="btn3">Show Value</button>
+    <button id="btn4">Set Text</button>
+    <button id="btn5">Set HTML</button>
+    <button id="btn6">Set Value</button>
+
+    자바스크립트에서 값 가져오는거
+value :  value를 가지고 있다면 value 의 값을 가져온다.
+input, select, textarea...
+val()
+
+innerHTML : value가 없는 객체의 내용을 들고 온다. html 태그 포함
+html()
+
+textContent :  value가 없는 객체의 내용을 들고 온다. html 태그 미 포함
+text()
+
+</body>
+
+</html>

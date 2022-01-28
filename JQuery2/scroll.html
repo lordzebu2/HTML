@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <style>
+            *,html,body{
+                margin: 0;
+                padding: 0;
+                height: 100%;
+            }
+            #wrap{
+                width: 100%;
+            }
+            .page{
+                width: 100%;
+                height: 100%;
+            }
+            .red{
+                background-color: red;
+            }
+            .blue{
+                background-color: blue;
+            }
+            .green{
+                background-color: green;
+            }
+            .info{
+                width: 100%;
+                height: 100px;
+                font-size: 24px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="info"></div>
+            <div class="page red"></div>
+            <div class="page green"></div>
+            <div class="page blue"></div>
+        </div>
+
+        <script>
+            $(function(){
+                $(window).scroll(function(){
+                    $(".info").text($(window).scrollTop());
+                    //기본 스크롤을 브라우저 자체가 만들어 주기때문에 선택지가 window가 된다.
+                });
+            });
+        </script>
+    </body>
+</html>

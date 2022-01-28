@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>        
+    <title>Document</title>
+
+    <style>
+
+        /* ul 밑에 있는 모든 li 를 의미한다. 띄워쓰기*/
+        /* ul li{             
+            color: red;
+        } */
+
+        /* >를 사용한다. 직계 이기때문에 바로 밑에 있는것만 의미한다.*/
+        /* ul>li>ul>li{             
+            color: red;
+        } */
+
+        /* 일반 형제 선택자. 기준 ~ 태그(아이디, 클래스) 까지의 본인을 포함하지 않는 형제노드 */
+        /* .title ~ li{ 
+            color: royalblue;
+        } */
+
+        /* 인접형제 선택자. 형제중에 같은 라인의 바로 밑만 적용 */
+        .title + li{ 
+            color: royalblue;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <ul>
+                <li>중제목1</li>
+                <li>중제목2</li>
+                <li>중제목3</li>
+            </ul>
+        </li>
+        <li>제목2</li>
+        <li>제목3
+            <ol>
+                <li class="title">소제목1</li>
+                <li>소제목2</li>
+                <li>소제목3</li>
+            </ol>
+        </li>
+    </ul>
+
+    자손 결합 선택자 - 띄워 쓰기 - 어디어디 밑에 있는 태그 ex) ul li 
+직계 자손 결합 선택자 - > (꺽쇠) - 어디어디 바로 밑에 있는 태그 ex)  ul>li
+일반 형제 선태자 - 같은 라인의 있는 모든 애들 ex) .title ~ li
+인접 형제 선택자 - 같은 라인의 있는 바로 옆 그녀석 ex) .title + li
+
+</body>
+</html>

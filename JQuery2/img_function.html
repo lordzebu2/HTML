@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <img src="aoa1.png" alt="">
+        <br>
+        <button>src속성 가져오기</button>
+        <button>이미지 크기변경 +  이미지 src변경</button>
+        <button>src속성 삭제</button>
+        
+        <script>
+            $(function(){
+                var srcImg = $("img").attr("src");
+
+                $("button").eq(0).click(function(){
+                    alert(srcImg);
+                });
+
+                $("button").eq(1).click(function(){
+                    // $("img").attr("width","200");
+                    // $("img").attr("src","aoa2.png");
+                    $("img").attr({
+                        "width":200,
+                        //"src":"aoa3.png" // 덮어쓰기라서 어차피 바뀜
+                        "src": srcImg.replace(srcImg,"aoa3.png")//src 교체
+                    });
+                });
+
+                $("button").eq(2).click(function(){
+                    $("img").removeAttr("src");
+                });
+            });
+        </script>
+    </body>
+</html>

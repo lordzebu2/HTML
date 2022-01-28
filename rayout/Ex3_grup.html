@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            *,html,body{
+                margin: 0;
+                padding: 0;
+            }
+            .container{
+                width: 100%;
+                display: flex;
+                flex-flow: row wrap;
+            }
+            .container div{
+                min-width: 150px;
+                min-height: 150px;
+            }
+            .c1, .c2, .c3, .c4{
+                width: 100%;
+            }
+            .c1{
+                background-color: red;
+            }
+            .c2{
+                background-color: green;
+            }
+            .c3{
+                background-color: blue;
+            }
+            @media(min-width:600px){
+                .c1{
+                    width: 25%;
+                    order: 2;
+                }
+                .c4{
+                    width: 75%;
+                    order: 1;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="c1">
+                레이아웃 시프터
+                여러화면(묶어놓은 애들)의 복수의 중단점이 있다.
+                요소내의 변경도 같이 지원
+            </div>
+            <div class="c4">
+                <div class="c2"></div>
+                <div class="c3"></div>
+            </div>
+
+        </div>        
+    </body>
+</html>

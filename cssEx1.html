@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>    
+    <title>Document</title>
+    <!-- css는 이 사이트 전반에 대한 설정입니다. 그런이유로 head에 작성하고 작성태그는 style 입니다. -->
+    <style>
+        p {  /*  여기서 p는 태그의 이름이다. 이걸 태그 선택자 라고 한다.  */
+            background-color: red;
+        }
+
+        input {
+            background-color: blue;
+        }
+
+        hr {
+            height: 10px;
+            background-color: chartreuse;
+        }
+
+        * {
+            color: cyan;
+          }
+
+        .bora  {
+         background-color: blueviolet;   
+        }
+
+        #parang {
+            background-color: cornflowerblue;
+        }
+
+        input[type=text]{
+            background-color: fuchsia;
+        }
+        input[type=button]{
+            background-color: forestgreen;
+        }
+        input[type=password]{
+            background-color: gold;
+        }
+
+        a {
+            color: hotpink;
+        }
+        a:active{
+            color: lawngreen;
+        }
+        a:visited{
+            color: lightseagreen;
+        }
+
+        input[type=text], input[type=button]{
+            color: mediumpurple;
+        }
+    </style>
+</head>
+<body>
+    
+<a href="http://naver.com">네이버</a>
+
+태그 선택자 - 태그 이름을 쓴다. ex) p
+전체 선택자 - 전체를 의미한다. ex) *
+클래스 선택자 - 클래스를 의미한다.  ex) .클래스명 - 중복 클래스 가능
+아이디 선택자 - 아이드를 의미한다. ex) #아이디명 - 중복 아이디 불가!(써도 에러는 안남.)
+속성 선택자 -  속성을 써준다. ex) input[type=text]
+가상 선택자 - 눈에 보이지 않는 선택자(특정한 상황에서) ex) a:active
+그룹 선택자 - 여러개 태그 또는 클래스, 아이디를 동시에 같은 속성으로 ex) p, a, .bora
+
+<hr>
+
+<input type="text">
+<input type="button" value="버튼">
+<input type="password">
+
+<hr>
+
+안녕
+
+<p class="bora">
+    이것은 패러그래프
+</p>
+<hr>
+<p  class="bora">
+    이것은 패러그래프
+</p>
+<hr>
+<p id="parang">
+    이것은 패러그래프
+</p>
+<hr>
+<p id="parang">
+    아이디도 클래스 처럼 중복이 가능 하지만, 안쓰기를 권고함. 중복해야한다면 클래스로!
+</p>
+<hr>
+
+
+</body>
+</html>
+

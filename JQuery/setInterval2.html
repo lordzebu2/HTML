@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    </head>
+    <body>
+        <div></div>
+        <button class="go">고</button>
+        <button class="stop">스톱</button>
+        <script>
+            var flag = true;
+            function tmp(){
+                $("div").append("하이");
+            }
+
+            var inter = setInterval(tmp, 500);// 메서드명에서 () 를 제외하고쓴다.
+            // 자동실행
+            
+            $(".go").click(function(){
+                if(flag==false){
+                    inter = setInterval(tmp, 500);// 메서드명에서 () 를 제외하고쓴다.                
+                    // 일시 정지후 다시 실행
+                    flag=true;
+                }
+            });
+            $(".stop").click(function(){
+                clearInterval(inter);
+                flag=false;
+            });
+
+        </script>
+    </body>
+</html>

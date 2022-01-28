@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <style>
+            ul{
+                /* border: 1px solid red; */
+                background-color: pink;
+            }
+            li{
+                /*border: 1px solid blue;*/
+                background-color: skyblue;
+            }
+            /*
+                고전적인 방법
+                1) li 에다가 display:inline-block
+                   - 단점 : 양쪽 정렬 불가
+                   - centet 정렬 + 마진을 통해서 정렬함
+                   - 가로로 배치하기 위해서가 아닌 부가 기능으로 가로배치가 되는것
+                   - 그래서 공간이 없으면 자동으로 다음 라인으로 내려감
+                2) li 에다가 float: left 주는거
+                    - 단점 : 반드시 clear:both를 통해서 공간을 줘야함
+                    - 공간이 없으면 다음 라인으로 내려감
+
+                html5 + css3
+                부터는 새로운 tag 출현
+                display : flex
+                - 무조건 가로 배치. 공간이 부족하면 알아서 크기를 줄여서 가로배치함
+                - 양쪽정렬이 2가지 속으로 가능
+            */
+            li{
+                /*display: inline-block;*/
+                /*float: left;*/                
+                width: 30%;
+                list-style: none;
+            }
+            ul{
+                padding: 0;
+                width: 100%;
+                display: flex;
+                /*
+                flex-direction: row; 가로로 배치 하라
+                flex-wrap: wrap; 공간이 부족하면 내려가라
+                */
+                flex-flow: row wrap;
+                
+                justify-content: space-around; /*남은 공간을 똑같이 나눠서 양쪽정렬*/
+                /*space-between; 양쪽 끝을 꽉 채우고 양쪽정렬*/
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>메뉴1</li>
+            <li>메뉴2</li>
+            <li>메뉴3</li>
+        </ul>
+    </body>
+</html>

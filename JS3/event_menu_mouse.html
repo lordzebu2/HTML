@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8">
+      <title>Untitled</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+          div{
+              border: 1px solid black;
+              display: inline-block;
+          }
+          div p{
+              display: none;
+              border: 1px solid red;              
+          }
+      </style>
+   </head>
+   <body>
+      <div id="menu1" onmousemove="menuup(1)" onmouseout="menuout(1)">메뉴1
+          <p id="sub1">서브1</p>
+          <p id="sub2">서브2</p>
+          <p id="sub3">서브3</p>
+      </div>
+      <div id="menu2" onmousemove="menuup(2)" onmouseout="menuout(1)">메뉴2
+          <p id="sub4">서브1</p>
+          <p id="sub5">서브2</p>
+          <p id="sub6">서브3</p>
+      </div>
+      
+      <script>
+          function menuup(e){
+            var up = document.getElementById("menu1").value;
+            if(e==1){
+                document.getElementById("sub1").style.display="block";
+                document.getElementById("sub2").style.display="block";
+                document.getElementById("sub3").style.display="block";
+            }else if(e==2){
+                document.getElementById("sub4").style.display="block";
+                document.getElementById("sub5").style.display="block";
+                document.getElementById("sub6").style.display="block";
+            }
+          }
+          function menuout(e){
+              var out = document.getElementById("menu1").value;
+            if(e==1){
+                document.getElementById("sub1").style.display="none";
+                document.getElementById("sub2").style.display="none";
+                document.getElementById("sub3").style.display="none";
+                document.getElementById("sub4").style.display="none";
+                document.getElementById("sub5").style.display="none";
+                document.getElementById("sub6").style.display="none";
+            }
+          }
+      </script>
+   </body>
+</html>

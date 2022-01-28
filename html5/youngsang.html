@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <style>
+            #backmp4{
+                position: fixed;
+                left: 0;
+                top: 0;
+                min-width: 100%; /*화면의 크기와 상관없이 최소 크기를 100%로 잡는다.*/
+                min-height: 100%;
+            }
+            .content{
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.5);
+                color: white;
+                width: 100%;
+                padding: 20px;
+            }
+            button{
+                width: 200px;
+                font-size: 18px;
+                padding: 10px;
+                background-color: black;
+                color: dark;
+                cursor: pointer;
+                border: none;
+                transform: translate();
+            }
+            
+        </style>
+    </head>
+    <body>
+        <video id="backmp4" autoplay muted loop>
+            <source src="학습용동영상.mp4" type="video/mp4">
+        </video>
+
+        <div class="content">
+            <h1>큰 제목 표시줄</h1>
+            <p>아무말이 합니다.</p>
+            <button>일시중지</button>
+        </div>
+    </body>
+</html>

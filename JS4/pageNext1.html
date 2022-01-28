@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8">
+      <title>Untitled</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+          div{
+              width: 250px;
+              height: 100px;
+              border: 1px solid black;
+              float: left;
+          }
+      </style>
+      <script>
+          function goNext(){
+              location.href = "pageNext1-2.html"
+          }
+      </script>
+   </head>
+   <body>
+        <div>
+            아 이 디 :<input type="text">
+            비밀번호 :<input type="text">
+            <input type="button" value="회원가입" onclick="goNext()">
+            <input type="button" value="아이디/비번찾기">
+        </div>
+   </body>
+</html>

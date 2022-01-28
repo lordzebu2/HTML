@@ -1,0 +1,617 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+pageEncoding="EUC-KR"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+   <title>Insert title here</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+   <style>
+      *,
+      html,
+      body {
+         margin: 0;
+         padding-left: ;
+         padding-right: ;
+         padding-top: ;
+         padding-bottom: ;        
+      }
+
+      .mainbar img {
+         width: 200px;
+         margin: 30px;
+      }
+
+      .wrap {
+         max-width: 1920px;
+         height: calc(100vh - 95px);
+         margin: 0 auto;
+         position: relative;
+
+      }
+
+      .icon {
+         font-size: 35px;
+         margin: 20px;
+      }
+
+      .icon i {
+         margin-left: 20px;
+      }
+
+      .mainbar {
+         width: 1440px;
+         height: 95px;
+         margin: 0 auto;
+         position: relative;
+      }
+
+      li {
+         list-style: none;
+      }
+
+      ul li {
+         float: left;
+         list-style: none;
+         margin-top: 35px;
+         font-weight: bold;
+         height: 60px;
+         width: 110px;
+         text-align: center;
+      }
+
+      .first {
+         position: absolute;
+         width: 100%;
+         top: 5px;
+         display: none;
+         z-index: 1;
+         background-color: white;
+      }
+
+      .menu {
+         display: flex;
+         flex-flow: column;
+      }
+
+      .menu li {
+         margin-bottom: 0px;
+         height: 26px;
+         width: 200px;
+         text-align: left;
+         position: relative;
+         font-size: 18px;
+         font-weight: bold;
+         border: 1px solid red;
+      }
+
+      .submenu {
+         position: absolute;
+         left: 130px;
+         top: 0px;
+         border: 1px solid red;
+         display: none;
+      }
+      #sub2{
+         top: -60px;
+      }
+
+      .submenu ol {
+         width: 1235px;
+         height: 758px;
+      }
+
+      .submenu img {
+         border-radius: 15px 15px 15px 15px;
+      }
+
+      .imgbox1 {
+         position: absolute;
+         top: 30px;
+         right: 0%;
+      }
+
+      .imgbox1 img {
+         margin-left: 35px;
+      }
+
+      .imgbox2 {
+         position: absolute;
+         right: 0%;
+         top: 355px;
+      }
+
+      .imgbox2 img {
+         margin-left: 35px;
+      }
+
+      #air {
+         width: 450px;
+         height: 650px;
+         margin: 0;
+         margin-top: 5px;
+         margin-left: 45px
+      }
+
+      .showbox {
+         width: 100%;
+         height: 100%;
+         position: relative;
+         overflow: hidden;
+      }
+
+      .movebox {
+         width: 9600px;
+         height: 100%;
+         display: flex;
+         position: absolute;
+      }
+
+      .movebox div {
+         width: 100%;
+         height: 100%;
+      }
+
+      .movebox div img {
+         width: 100%;
+         height: 100%;
+      }
+
+      .controlbox {
+         position: absolute;
+         width: 100%;
+         bottom: 10%;
+         text-align: center;
+         z-index: 1;
+      }
+
+      .controlbox p {
+
+         display: inline-block;
+         bottom: 10%;
+         font-size: 20px;
+
+      }
+
+      .control-contents {
+
+         margin: 0 auto;
+         width: 55%;
+         height: 45px;
+      }
+
+      .bar {
+         background-color: lightgray;
+         width: 80px;
+         opacity: 0.5;
+         height: 5px;
+         border-radius: 5px 5px 5px 5px;
+      }
+
+      .barbox {
+         display: inline-block;
+         width: 10%;
+         height: 100%;
+         color: white;
+         font-weight: bold;
+         font-size: 18px;
+      }
+
+      #pause {
+         position: absolute;
+         top: 15px;
+         cursor: pointer;        
+      }
+
+      #play {
+         position: absolute;
+         top: 100px;
+      }
+
+      #hidden {
+         visibility: hidden;
+      }
+
+      .movebar {
+         background-color: white;
+         width: 0px;
+         height: 7px;
+         position: absolute;
+         bottom: 1px;
+         margin-left: 9px;
+         border-radius: 5px 5px 5px 5px;
+         animation-name: none;
+         animation-play-state: paused;
+         animation-iteration-count: infinite;
+      }
+      .border{         
+         width: calc(100% - 2px);         
+         position: absolute;   
+         top: 100px;
+         border: 1px solid gainsboro
+      }
+      .login{
+         position: absolute;
+         background-color: white;         
+         width: 250px;
+         height: 250px;       
+         z-index: 3;
+         top: 62px;
+         right: 35px;
+         font-size: 17px;
+         border-radius: 0px 0px 30px 30px;
+         display: none;       
+      }
+      .login > li{
+         margin-top: 50px;
+      }
+      .login li{
+         margin-bottom: 35px;
+         padding-left: 30px;
+      }
+      .modal{
+         width: 100%;
+         height: 100%;
+         top: 103px;
+         background-color: rgba(0, 0, 0, 0.7);
+         z-index: 2;
+         position: absolute;
+         display: none;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="modal"></div>
+   <div class="mainbar">
+      <div style="float: left;"><img src="로고.png"></div>
+      <ul>
+         <li class="product" style="cursor: pointer;">제품</li>
+         <li>기획전</li>
+         <li>스토리</li>
+         <li>고객서비스</li>
+         <li>맴버십</li>
+         <li>디지털프라자</li>
+         <li>사회공헌</li>
+         <li>비즈니스</li>
+      </ul>
+      <div class="icon" style="float: right;">
+         <i class="far fa-user">
+            <ol class = "login">
+               <li style="cursor: pointer;" onclick="location.href='login.html'">로그인</li>
+               <li>주문/배송조회</li>
+               <li>매장상담 예약 신청 조회</li>
+            </ol>
+         </i>
+         <i class="fas fa-shopping-cart"></i>
+         <i class="fas fa-search"></i>
+      </div>
+      <div style="clear: both;"></div>
+   </div>
+   <div class="border"></div>   
+
+   <div class="wrap">
+        
+      <div class="first">
+         <ol class="menu">
+            <li id="newproduct" style="height: 55px; cursor: pointer;">신제품
+               <div class="submenu" id="sub1">
+                  <ol>
+                     <img src="무풍.png" id="air">
+                     <div class="imgbox1">
+                        <img src="G21.png">
+                        <img src="TV.png">
+                        <img src="tap.png">
+                     </div>
+                     <div class="imgbox2">
+                        <img src="냉장고.png">
+                        <img src="360.png">
+                        <img src="드레서.png">
+                     </div>
+                  </ol>
+               </div>
+            </li>
+            <li id="choo" style="height: 55px;">닷컴 추천 제품
+               <div class="submenu" id="sub2">
+                  <ol>
+                     <img src="무풍.png" id="air">
+                     <div class="imgbox1">
+                        <img src="너부리야.png">
+                        <img src="보노보노야.png">
+                        <img src="포로리야.png">
+                     </div>
+                     <div class="imgbox2">
+                        <img src="바위.png">
+                        <img src="보.png">
+                        <img src="가위.png">
+                     </div>
+                  </ol>
+               </div></li>
+            <li style="height: 55px;">모바일</li>
+            <li style="height: 55px;">TV&오디오</li>
+            <li style="height: 55px;">셰프컬렉션</li>
+            <li style="height: 55px;">BESPOKE</li>
+            <li style="height: 55px;">주방가전</li>
+            <li style="height: 55px;">의류가전</li>
+            <li style="height: 55px;">리빙가전</li>
+            <li style="height: 55px;">PC/주변기기</li>
+            <li style="height: 55px;">스마트홈</li>
+            <li style="height: 55px;">소모품</li>
+         </ol>
+      </div>
+      <div class="controlbox">
+         <div class="control-contents">
+            <div class="barbox" id="back1" style="cursor: pointer;">배경1
+               <p class="bar">
+               <div class="movebar" id="bar1"></div>
+               </p>
+            </div>
+            <div class="barbox" id="back2" style="cursor: pointer;">배경2
+               <p class="bar">
+               <div class="movebar" id="bar2"></div>
+               </p>
+            </div>
+            <div class="barbox" id="back3" style="cursor: pointer;">배경3
+               <p class="bar">
+               <div class="movebar" id="bar3"></div>
+               </p>
+            </div>
+            <div class="barbox" id="back4" style="cursor: pointer;">배경4
+               <p class="bar">
+               <div class="movebar" id="bar4"></div>
+               </p>
+            </div>
+            <div class="barbox" id="back5" style="cursor: pointer;">배경5
+               <p class="bar">
+               <div class="movebar" id="bar5"></div>
+               </p>
+            </div>
+            <div class="fas fa-pause barbox" id="pause">
+               <!-- <i class="fas fa-play" id="play"></i> -->
+               <p class="bar" id="hidden"></p>
+            </div>
+         </div>
+      </div>
+      <div class="showbox">
+         <div class="movebox">
+            <div><img src="배경1-1.png"></div>
+            <div><img src="배경1-2.png"></div>
+            <div><img src="배경1-3.png"></div>
+            <div><img src="배경1-4.png"></div>
+            <div><img src="배경1-5.png"></div>
+         </div>
+      </div>
+   </div>
+   <script>
+      $(function () {
+         $(".product").stop(true,true).mouseenter(function () {
+            $(".first").slideToggle(500);
+         });         
+         $(".first").mouseleave(function () {
+            $(".first").slideUp(500);
+         });
+         $("#newproduct").stop(true,true).mouseenter(function () {
+            $("#sub1").slideDown(500);
+         });
+         $("#newproduct").mouseleave(function () {
+            $("#sub1").fadeOut(250);
+         });
+         $("#choo").stop(true,true).mouseenter(function () {
+            $("#sub2").slideDown(500);
+         });
+         $("#choo").mouseleave(function () {
+            $("#sub2").fadeOut(250);
+         });
+         $(".fa-user").mouseleave(function(){
+            $(".login").slideUp(500);
+         })
+         $(".fa-user").mouseleave(function(){
+            $(".modal").fadeOut(300);
+         })
+         $(".fa-user").mouseenter(function(){
+            $(".modal").fadeIn(10, function(){
+               $(".login").slideDown(500);
+            });
+         })
+      });
+
+      $(document).ready(function () {
+         $("#bar1").animate({
+            width: "82px"
+         }, 4000, function () {
+            $(".movebox").animate({
+               left: "-1920px"
+            }, 500);
+         });
+      });
+   </script>
+   <script>
+      // var flag = true;
+
+      // function tmp(){
+      //    if (parseInt($(".movebox").css("left")) == "0") {
+      //       document.getElementById("bar5").style = 'width :"0px"';
+      //       $("#bar1").animate({
+      //          width: "82px"
+      //       }, 4000, function () {
+      //          $(".movebox").animate({
+      //             left: "-1920px"
+      //          }, 500);
+      //       });
+      //    } else if (parseInt($(".movebox").css("left")) == "-1920") {
+      //       document.getElementById("bar1").style = 'width :"0px"';
+      //       $("#bar2").animate({
+      //          width: "82px"
+      //       }, 4000, function () {
+      //          $(".movebox").animate({
+      //             left: "-3840px"
+      //          }, 500);
+      //       });
+      //    } else if (parseInt($(".movebox").css("left")) == "-3840") {
+      //       document.getElementById("bar2").style = 'width :"0px"';
+      //       $("#bar3").animate({
+      //          width: "82px"
+      //       }, 4000, function () {
+      //          $(".movebox").animate({
+      //             left: "-5760px"
+      //          }, 500);
+      //       });
+      //    } else if (parseInt($(".movebox").css("left")) == "-5760") {
+      //       document.getElementById("bar3").style = 'width :"0px"';
+      //       $("#bar4").animate({
+      //          width: "82px"
+      //       }, 4000, function () {
+      //          $(".movebox").animate({
+      //             left: "-7680px"
+      //          }, 500);
+      //       });
+      //    } else if (parseInt($(".movebox").css("left")) == "-7680") {
+      //       document.getElementById("bar4").style = 'width :"0px"';
+      //       $("#bar5").animate({
+      //          width: "82px"
+      //       }, 4000, function () {
+      //          $(".movebox").animate({
+      //             left: "0px"
+      //          }, 500);
+      //       });
+      //    }
+      // }
+
+      // var inter = setInterval(tmp, 4600);
+
+      // $("#play").click(function(){
+      //    if(flag==false){
+      //       inter = setInterval(tmp, 4600);
+      //       flag = true;
+      //    }
+      // });
+      // $("#pause").click(function(){
+      //    clearInterval(inter);
+      //    flag=false;
+      // })
+
+
+      setInterval(function () {
+
+         if (parseInt($(".movebox").css("left")) == "0") {
+            document.getElementById("bar5").style = 'width :"0px"';
+            $("#bar1").animate({
+               width: "82px"
+            }, 4000, function () {
+               $(".movebox").animate({
+                  left: "-1920px"
+               }, 500);
+            });
+         } else if (parseInt($(".movebox").css("left")) == "-1920") {
+            document.getElementById("bar1").style = 'width :"0px"';
+            $("#bar2").animate({
+               width: "82px"
+            }, 4000, function () {
+               $(".movebox").animate({
+                  left: "-3840px"
+               }, 500);
+            });
+         } else if (parseInt($(".movebox").css("left")) == "-3840") {
+            document.getElementById("bar2").style = 'width :"0px"';
+            $("#bar3").animate({
+               width: "82px"
+            }, 4000, function () {
+               $(".movebox").animate({
+                  left: "-5760px"
+               }, 500);
+            });
+         } else if (parseInt($(".movebox").css("left")) == "-5760") {
+            document.getElementById("bar3").style = 'width :"0px"';
+            $("#bar4").animate({
+               width: "82px"
+            }, 4000, function () {
+               $(".movebox").animate({
+                  left: "-7680px"
+               }, 500);
+            });
+         } else if (parseInt($(".movebox").css("left")) == "-7680") {
+            document.getElementById("bar4").style = 'width :"0px"';
+            $("#bar5").animate({
+               width: "82px"
+            }, 4000, function () {
+               $(".movebox").animate({
+                  left: "0px"
+               }, 500);
+            });
+         }
+      }, 4600);
+   </script>
+   <script>
+      $(document).ready(function () {
+         $("#back1").click(function () {
+            if (parseInt($(".movebox").css("left")) <= "0") {
+               $("#bar2, #bar3, #bar4, #bar5").stop(true)
+               document.getElementById("bar2").style = 'width :"0px"';
+               document.getElementById("bar3").style = 'width :"0px"';
+               document.getElementById("bar4").style = 'width :"0px"';
+               document.getElementById("bar5").style = 'width :"0px"';
+               $(".movebox").animate({
+                  left: "0px"
+               });
+            }
+         });
+         $("#back2").click(function () {
+            if (parseInt($(".movebox").css("left")) <= "0") {
+               $("#bar1, #bar3, #bar4, #bar5").stop(true)
+               document.getElementById("bar1").style = 'width :"0px"';
+               document.getElementById("bar3").style = 'width :"0px"';
+               document.getElementById("bar4").style = 'width :"0px"';
+               document.getElementById("bar5").style = 'width :"0px"';
+               $(".movebox").animate({
+                  left: "-1920px"
+               });
+            }
+         });
+         $("#back3").click(function () {
+            if (parseInt($(".movebox").css("left")) <= "0") {
+               $("#bar2, #bar1, #bar4, #bar5").stop(true)
+               document.getElementById("bar2").style = 'width :"0px"';
+               document.getElementById("bar1").style = 'width :"0px"';
+               document.getElementById("bar4").style = 'width :"0px"';
+               document.getElementById("bar5").style = 'width :"0px"';
+               $(".movebox").animate({
+                  left: "-3840px"
+               });
+            }
+         });
+         $("#back4").click(function () {
+            if (parseInt($(".movebox").css("left")) <= "0") {
+               $("#bar2, #bar3, #bar1, #bar5").stop(true)
+               document.getElementById("bar2").style = 'width :"0px"';
+               document.getElementById("bar3").style = 'width :"0px"';
+               document.getElementById("bar1").style = 'width :"0px"';
+               document.getElementById("bar5").style = 'width :"0px"';
+               $(".movebox").animate({
+                  left: "-5760px"                  
+               });
+            }
+         });
+         $("#back5").click(function () {
+            if (parseInt($(".movebox").css("left")) <= "0") {
+               $("#bar2, #bar3, #bar4, #bar1").stop(true)
+               document.getElementById("bar2").style = 'width :"0px"';
+               document.getElementById("bar3").style = 'width :"0px"';
+               document.getElementById("bar4").style = 'width :"0px"';
+               document.getElementById("bar1").style = 'width :"0px"';
+               $(".movebox").animate({
+                  left: "-7680px"
+               });
+            }
+         });
+      });
+   </script>
+</body>
+
+
+
+</html>

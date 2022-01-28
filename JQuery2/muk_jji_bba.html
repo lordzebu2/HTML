@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            #wrap{
+                width: 700px;
+                height: 400px;
+                border: 1px solid black;
+                text-align: center;                
+                display: flex;
+                flex-flow: row wrap;
+                font-size: 24px;
+            }
+            #wrap>div{
+                width: 50%;
+            }
+            #wrap>.result{
+                width: 100%;
+            }
+            #wrap>.choose{
+                width: 100%;
+            }
+            button{
+                margin-right: 20px;
+            }
+            button img{
+                width: 50px;
+                height: 50px;
+            }
+            div>img{
+                width: 200px;
+                height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div>
+                <div>컴퓨터</div>
+                <div><img alt=""></div>
+            </div>
+            <div>
+                <div>유저</div>
+                <div><img alt=""></div>
+            </div>
+            <div class="result">결과는?</div>
+            <div class="choose">
+                   <button><img src="묵.png"></button>
+                   <button><img src="찌.png"></button>
+                   <button><img src="빠.png"></button>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+
+            $(function(){
+                var ran=0;
+                var com=["묵.png","찌.png","빠.png"];
+
+                $("button").click(function(){
+                    ran = Math.floor(Math.random()*3);//0,1,2
+                    $("#wrap div>img").eq(0).attr("src",com[ran]);
+                });
+
+
+                $("button").eq(0).click(function(){                   
+                    $("#wrap div>img").eq(1).attr("src","묵.png");
+                    result(ran,0);
+                });
+                $("button").eq(1).click(function(){
+                    $("#wrap div>img").eq(1).attr("src","찌.png");
+                    result(ran,1);
+                });
+                $("button").eq(2).click(function(){
+                    $("#wrap div>img").eq(1).attr("src","빠.png");
+                    result(ran,2);
+                });
+            });
+
+            function result(ran,user){
+                //$(".result").text(ran+":"+user);
+                var bool="비겼다";
+
+                if(user==0 && ran==1){
+                    bool="이겼다";
+                }else if(user==0 && ran==2){
+                    bool="졌다";
+                }else if(user==1 && ran==0){
+                    bool="졌다";
+                }else if(user==1 && ran==2){
+                    bool="이겼다";
+                }else if(user==2 && ran==0){
+                    bool="이겼다";
+                }else if(user==2 && ran==1){
+                    bool="졌다";
+                }
+                
+                $(".result").text(bool+"!");
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <style>
+            html,body{
+                height: 100%;
+            }
+            #wrap{
+                width: 100%;
+                height: 100%;
+                position: relative;
+            }
+            .layer{
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.5);
+                display: none;
+                z-index: 2;
+            }
+            .box{
+                width: 300px;
+                height: 200px;
+                border: 1px solid black;
+                position: absolute;
+                top: 100px;
+                left: 50%;
+                transform: translate(-50%);
+                display: none;
+                z-index: 3;
+            }
+            .box iframe{
+                width: 100%;
+                height: 100%;
+                border: 0;
+            }
+            .box button{
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="layer"></div>
+            <div class="box"><iframe></iframe><button>x</button></div>
+            코딩할때 듣기 좋은 음악 모음 1,2,3,4,5,6
+            <table>
+                <tr>
+                    <td>
+                        <img src="https://img.youtube.com/vi/cbuZfY2S2UQ/mqdefault.jpg">
+                    </td>
+                    <td>
+                        <img src="https://img.youtube.com/vi/Xc1Le3CSdrM/mqdefault.jpg">
+                    </td>
+                    <td>
+                        <img src="https://img.youtube.com/vi/0xJxgvJO2Xo/mqdefault.jpg">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://img.youtube.com/vi/RMr30hkzu7w/mqdefault.jpg">
+                    </td>
+                    <td>
+                        <img src="https://img.youtube.com/vi/nxKfi-6EtmY/mqdefault.jpg">
+                    </td>
+                    <td>
+                        <img src="https://img.youtube.com/vi/CfPxlb8-ZQ0/mqdefault.jpg">
+                    </td>
+                </tr>
+            </table>
+
+            <script>
+                $(function(){
+
+                    $("img").click(function(){
+                        var srctmp = $(this).attr("src");
+                        var src = srctmp.substring(srctmp.indexOf("vi/")+3,srctmp.lastIndexOf("/"));
+                        //alert(src); //테스트 코드 img의 src 중에서 동영상 id만 뽑아오기
+                        $("iframe").attr("src","https://www.youtube.com/embed/"+src);
+                        $(".layer").slideDown(300,function(){
+                            $(".box").fadeIn(300);
+                        });
+                    });
+
+                    $(".box button").click(function(){
+                        $(".box").fadeOut(300,function(){
+                            $(".layer").slideUp(300);
+                        });
+                    });        
+
+		        }); 
+                $(document).ready(function(){
+                    $(".go").click(function(){
+                    var date = $datepicker.formatDate("yymmdd",$("#sdate").datepicker("getDate"));
+                    alert(date);
+                    
+                });
+                #("#textbox").click(function(){
+						document.getElementById('textbox').innerText
+					});
+                    $("#ppsave").click(function(){						
+						var people = document.querySelector("#num");
+						alert(people.innerHTML);
+						document.getElementById('pnum').value.innerHTML="";
+						document.getElementById('pnum').innerHTML=people.innerHTML;						
+					}); 
+
+                
+                $("#sdate_dp").datepicker('setDate', 'today')
+                var date = $datepicker.formatDate("yymmdd",$("#sdate").datepicker("getDate"));
+            </script>
+        </div>
+    </body>
+</html>
+
+$(document).ready(function(){
+    $(".go").click(function(){
+        const element = document.getElementById('go1');
+        document.getElementById('go2').innerHTML element)
+});
+
+
+$(document).ready(function(){
+    $(".go").click(function(){
+        var element = document.getElementsByClassName("go");
+        var text = element[0].innerHTML;				
+        document.getElementById('go2').innerHTML = text;
+        });
+}); 
+
+$(document).ready(function(){
+    $(".go").click(function(){
+        var year = document.querySelector('.go');
+            alert(year.innerHTML);
+            document.getElementById('go2').innerHTML = year.innerHTML;
+        });
+}); 
+
+$(".ui-datepicker-year Option:selected").val();

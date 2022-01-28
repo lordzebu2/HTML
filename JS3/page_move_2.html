@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <input type="button" onclick="func1()" value="history.go(-1)"><br>
+        <input type="button" onclick="func2()" value="history.back()"><br>
+
+        <script>
+            function func1(){
+                history.go(-1);
+            }
+            function func2(){
+                history.back();
+            }
+        </script>
+    </body>
+</html>

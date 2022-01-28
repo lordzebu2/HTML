@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            div{
+                width: 50px;
+                height: 50px;
+                left: 0;
+                top: 0;
+                position: absolute;
+                background-color: red;
+            }
+            input{
+                position: absolute;
+            }
+            input#up{ /* 띄워쓰기를 안하면 input중에서 id가 up인 녀석 */
+                bottom: 30px;
+                left: 50px;
+            }
+            input#right{
+                bottom: 0;
+                left: 100px;
+            }
+            input#down{
+                bottom: 0;
+                left: 50px;
+            }
+            input#left{
+                bottom: 0;                
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="redbox"></div>
+        <input type="button" value="▲" onclick="move(1)" id="up">
+        <input type="button" value="▶" onclick="move(2)" id="right">
+        <input type="button" value="▼" onclick="move(3)" id="down">
+        <input type="button" value="◀" onclick="move(4)" id="left">
+
+        <!--
+        <input type="button" value="▲" onclick="up()" id="up">
+        <input type="button" value="▶" onclick="right()" id="right">
+        <input type="button" value="▼" onclick="down()" id="down">
+        <input type="button" value="◀" onclick="left()" id="left">
+        -->
+
+        <script>
+            var x=0;//left 값
+            var y=0;//top 값
+            /*
+            function up(){
+                y=y-10;
+                document.querySelector("#redbox").style.top=y+"px";
+            }
+            function right(){
+                x=x+10;
+                document.querySelector("#redbox").style.left=x+"px";
+            }
+            function down(){
+                y=y+10;
+                document.querySelector("#redbox").style.top=y+"px";
+            }
+            function left(){
+                x=x-10;
+                document.querySelector("#redbox").style.left=x+"px";
+            }
+            */
+           function move(num){
+                switch(num){
+                    case 1: y=y-10;
+                    break;
+                    case 2: x=x+10;
+                    break;
+                    case 3: y=y+10;
+                    break;
+                    case 4: x=x-10;
+                    break;
+                }
+                document.querySelector("#redbox").style.top=y+"px";
+                document.querySelector("#redbox").style.left=x+"px";
+            }
+        </script>
+    </body>
+</html>

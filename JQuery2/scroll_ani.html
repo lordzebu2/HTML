@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <style>
+            *,html,body{
+                margin: 0;
+                padding: 0;
+                height: 100%;
+            }
+            #wrap{
+                width: 100%;
+            }
+            .page{
+                width: 100%;
+                height: 100%;
+            }
+            .red{
+                background-color: red;
+            }
+            .blue{
+                background-color: blue;
+            }
+            .green{
+                background-color: green;
+            }
+            .info{
+                width: 100%;
+                height: 100px;
+                font-size: 24px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="info"></div>
+            <div class="page red"></div>
+            <div class="page green"></div>
+            <div class="page blue"></div>
+        </div>
+
+        <script>
+            $(function(){               
+                $(".page").on("mousewheel DOMMouseScoll", function(e){
+                    e.preventDefault();//브라우저 자체의 애니메이션 효과를 없애기 위해서.
+                    var E = e.originalEvent;
+                    var delta = 0;
+                    if(E.detail){                        
+                        delta = E.detail * -40;
+                    }else{
+                        delta = E.wheelDelta;
+                        if(window.opera){
+                            delta = -delta;
+                        }
+                    }
+                    
+                    $(".info").text(delta+":"+$(this).offset().top);
+
+                    var moveTop = 0;// offset().top을 가질 변수
+                    if(delta<0){// 스크롤을 밑으로 굴렸을 때
+                        if($(this).next()!=undefined){// this = .page를 말함 // 현재기준으로 다음 페이가 있다면
+                            $("html,body").stop().animate({
+                                scrollTop:$(this).next().offset().top+"px"
+                            },1000);
+                            
+                        }
+                    }else{
+                        if($(this).prev()!=undefined){// this = .page를 말함 // 현재기준으로 다음 페이가 있다면
+                            $("html,body").stop().animate({
+                                scrollTop:$(this).prev().offset().top+"px"
+                            },1000);
+                            
+                        }
+                    }
+
+            //         $(".page").on("mousewheel DOMMouseScoll", function(e){
+            //         e.preventDefault();//브라우저 자체의 애니메이션 효과를 없애기 위해서.
+            //         var E = e.originalEvent;
+            //         var delta = 0;
+            //         if(E.detail){                        
+            //             delta = E.detail * -40;
+            //         }else{
+            //             delta = E.wheelDelta;
+            //             if(window.opera){
+            //                 delta = -delta;
+            //             }
+            //         }
+                    
+            //         $(".info").text(delta);
+            //         if(delta<0){
+            //             if($(this).index() != 0){
+            //                 $(this).stop().slideUp(1000);
+            //             }
+            //         }else{
+            //             if($(this).next()!=undefined){
+            //                 $(this).next().stop().slideDown(1000);
+            //             }
+            //         }
+
+
+            //     });
+                
+            // });
+
+
+
+
+
+
+
+                });
+                
+            });
+        </script>
+    </body>
+</html>

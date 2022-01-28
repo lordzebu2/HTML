@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <style>
+            *,html,body{
+                margin: 0;
+                padding: 0;
+                height: 100%;
+            }
+            #wrap{
+                width: 100%;
+            }
+            .page{
+                width: 100%;
+                height: 100%;
+            }
+            .red{
+                background-color: red;
+            }
+            .blue{
+                background-color: blue;
+            }
+            .green{
+                background-color: green;
+            }
+            .info{
+                width: 100%;
+                height: 100px;
+                font-size: 24px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="info"></div>
+            <div class="page red"></div>
+            <div class="page green"></div>
+            <div class="page blue"></div>
+        </div>
+
+        <script>
+            $(function(){
+               // 현재 마우스 커서의 위치가 현 위치(html, body) 라면
+               // 스크롤 바가 아닌 마우스의 스크롤 버튼은 따로 이벤트가 없다. 그래서 만들어서 써야 한다.    
+                $("html,body").on("mousewheel DOMMouseScoll", function(e){
+                    // mousewheel 은 크롬,익스플로러에서 마우스 스크롤을 움직일때 값이 변하는 변수 이름이다.
+                    // DOMMouseScoll은 파이어폭스 일경우 mousewheel이라는 변수 대신 있는것.
+                    //$(".info").text(e.originalEvent.wheelDelta);// 양수면 마우스를 밑으로 굴림/ 음수면 위로/ 크롬,익스
+                    //$(".info").text(e.originalEvent.detail);// 파이어 폭스 양수면 위로/ 음수면 밑으로
+
+                    var E = e.originalEvent;
+                    var delta = 0;// 휠 변수값을 담을 변수
+                    //$(".info").text(E.detail);// 파이어 폭스가 가지고 있으므로 크롬에서는 0을 가짐
+                    if(E.detail){ // if(0) => if(false) => 값이 0이 아니면  true가 된다.
+                        // 이게 실행된다는 소리는 파이어폭스 브라우저라는 뜻이됨.
+                        delta = E.detail * -40; // 3을 가짐 // 파이어폭스랑 크롬은 마우스 스크롤시 양수/음수가 반대임
+                    }else{// 파이어폭스가 아닌 브라우져 = 크롬/익스프롤러...
+                        delta = E.wheelDelta; //120을 가짐
+                        if(window.opera){
+                            delta = -delta; // 오페라 브라우져일 경우에 숫자는 120이 같지만 음수/양수가 반대이다.
+                        }
+                    }
+                    // if문 처리가 끝나면 어떤브라우져 든지 내리면 -120 올리면 +120이 된다.
+                    $(".info").text(delta);
+                });
+                
+            });
+        </script>
+    </body>
+</html>

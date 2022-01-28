@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>    
+    <title>Document</title>
+    <style>
+        *,html,body{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap{
+            width: 768px;
+            border: 1px solid black;
+        }        
+        #wrap::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .left{
+            width: 250px;
+            height: 500px;
+            float: left;
+            background: pink;
+        }
+        .right{
+            width: 500px;
+            height: 500px;
+            float: right;
+            background-color: skyblue;
+        }
+
+        li{
+            list-style: none;
+        }
+
+        .menu>li{
+            position: relative;
+            border: 1px solid black;
+            width: 100px;
+        }
+        li>.sub{ /* ul */
+            position: absolute;
+            background-color: springgreen;
+            width: 200px;
+            left: 100px;
+            top: 0;
+            display: none;
+        }
+        .menu>li:hover .sub{
+            display: block;
+        }
+        .sub li{
+            /*float: left;*/
+        }
+        .sub li:hover{
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="left">
+            <ul class="menu">
+                <li>메뉴1
+                    <ul class="sub">
+                        <li>서브1</li>
+                        <li>서브2</li>
+                    </ul>
+                </li>
+                <li>메뉴2
+                    <ul class="sub">
+                        <li>서브3</li>
+                        <li>서브4</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

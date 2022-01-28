@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8">
+      <title>Untitled</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+         *,html,body{
+            margin: 0 auto;
+            padding: 0 auto;
+         }
+         .wrap{
+            width: 500px;
+            height: 600px;
+            border: 1px solid black;
+         }  
+         .oper{
+            width: 100%;
+            font-size: 80px;
+         }
+         .bt{
+            font-size: 50px;
+            width: 100px;
+            height: 60px;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="wrap">
+         <div class="box1">
+            <input type="text" class="oper" id="tbox">
+         </div>
+         <div class="box2">
+            <table>
+               <tr>
+                  <td><input type="button" onclick="btn(7)" value="7" class="bt"></td>
+                  <td><input type="button" onclick="btn(8)" value="8" class="bt"></td>
+                  <td><input type="button" onclick="btn(9)" value="9" class="bt"></td>
+                  <td><input type="button" onclick="btn('x')" value="x" class="bt"></td>
+                  <td><input type="button" onclick="btn(4)" value="4" class="bt"></td>
+                  <td><input type="button" onclick="btn(5)" value="5" class="bt"></td>
+                  <td><input type="button" onclick="btn(6)" value="6" class="bt"></td>
+                  <td><input type="button" onclick="btn('-')" value="-" class="bt"></td>
+                  <td><input type="button" onclick="btn(1)" value="1" class="bt"></td>
+                  <td><input type="button" onclick="btn(2)" value="2" class="bt"></td>
+                  <td><input type="button" onclick="btn(3)" value="3" class="bt"></td>
+                  <td><input type="button" onclick="btn('+')" value="+" class="bt"></td>
+                  <td class="bt"></td>
+                  <td><input type="button" onclick="btn(0)" value="0" class="bt"></td>
+                  <td><input type="button" onclick="btn('=')" value="=" class="bt"></td>
+                  <td><input type="button" onclick="btn('/')" value="/" class="bt"></td>
+               </tr>
+            </table>
+         </div>
+      </div>
+
+      <script>
+         var first;
+         var oper;           
+            function btn(num){
+                var data = document.getElementById("tbox").value;// 원래 있던 String 값을 들고온다.    
+                         
+                if(num=="+"){                  
+                  oper="+";                    
+                    first=data;                                      
+                    document.getElementById("tbox").value="";
+                    data="";
+                }else if(num=="-"){                  
+                  oper="-";
+                    first=data;                    
+                    document.getElementById("tbox").value="";
+                    data="";
+                }else if(num=="/"){                  
+                  oper="/";
+                    first=data;                   
+                    document.getElementById("tbox").value="";
+                    data="";
+                }else if(num=="x"){                
+                  oper="*";
+                    first=data;                   
+                    document.getElementById("tbox").value="";
+                    data="";
+                }else if(num=="=" && oper=="+"){                                    
+                  document.getElementById("tbox").value = Number(first)+Number(data);                    
+                }else if(num=="=" && oper=="-"){
+                  document.getElementById("tbox").value = Number(first)-Number(data);
+                }else if(num=="=" && oper=="/"){
+                  document.getElementById("tbox").value = Number(first)/Number(data);
+                }else if(num=="=" && oper=="*"){
+                  document.getElementById("tbox").value = Number(first)*Number(data);
+               }else{                                                 
+                  data= data+num;// 1번 버튼이니까 원래값을 들고와서 + 1 해줍니다. <= 문자열 더하기 임
+                  document.getElementById("tbox").value=data; // 결과를 다시 tbox에 넣는다
+                }
+            }
+            // function btn1(num){
+            //    var data = document.getElementById("tbox").value;// 원래 있던 String 값을 들고온다.                
+            //     if(num=="-"){
+            //         minus=data;
+            //         document.getElementById("tbox").value="";
+            //         data="";
+            //     }else if(num=="="){
+            //         document.getElementById("tbox").value = Number(minus)-Number(data);
+            //     }else{                
+            //         data= data+num;// 1번 버튼이니까 원래값을 들고와서 + 1 해줍니다. <= 문자열 더하기 임
+            //         document.getElementById("tbox").value=data; // 결과를 다시 view에 넣는다
+            //    }
+            // }
+
+      </script>
+   </body>
+</html>

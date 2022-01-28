@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8">
+      <title>Untitled</title>
+      <style>
+          *,html,body{
+              margin: 0;
+              padding: 0;
+          }
+         
+          .wrap{
+              width: 1080px;
+              margin: 0 auto
+              
+   
+          }
+          .top{
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+          }
+          .box{
+              width: 100%;
+              height: 100%;
+              background-color:slategrey;              
+          }
+          .box + .box{
+            margin-left: 8px;
+          }
+          .o{
+              width: 32px;
+              height: 32px;
+              border: 5px solid orange;
+              background-color: white;
+              position: absolute;
+              border-radius: 50%;
+              left: 50%;
+              transform: translate(-50%);              
+          }
+          #o1{
+              top: 50px;
+          }
+          #o2{
+              top: 400px;
+          }
+          #o3{
+              top: 700px;
+          }
+          .text{
+              width: 450px;
+              background-color: white;
+              margin-top: 30px;
+              position: absolute;
+              border-radius: 5px 5px 5px 5px;
+              padding: 10px;
+          }
+         
+        #t1{
+            top: 20px;
+            left: 33px;
+        }
+         #t2{
+             top: 670px;
+             right: 33px;
+        }
+        #t3{
+             top: 370px;
+             left: 33px;
+        }
+        .s{
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            transform: rotate(45deg);
+            position: absolute;
+        }
+        #s1{
+            top: 63px;
+            left: 491px;
+        }
+        #s2{
+            top: 710px;
+            right: 491px;
+        }
+        #s3{
+            top: 410px;
+            left: 491px;
+        }
+            
+      </style>
+   </head>
+   <body>
+      <div class="wrap">
+            <div class="top">                
+                <div class="box">
+                    <div class="text" id="t1"><p style="font-size: 30px;">2017</p><br><p>선거에 있어서 최고득표자가 2인 이상인 때에는 국회의 재적의원 과반수가 출석한 공개회의에서 다수표를 얻은 자를 당선자로 한다. 대통령은 조국의 평화적 통일을 위한 성실한 의무를 진다.</p></div>
+                    <div class="s" id="s1"></div>
+                    <div class="s" id="s2"></div>
+                    <div class="text" id="t2"><p style="font-size: 30px;">2016</p><br><p>국가안전보장회의는 대통령이 주재한다. 대통령의 임기는 5년으로 하며, 중임할 수 없다. 대통령후보자가 1인일 때에는 그 득표수가 선거권자 총수의 3분의 1 이상이 아니면 대통령으로 당선될 수 없다.</p></div>
+                </div>
+                <div class="box">
+                    <div class="s" id="s3"></div>
+                    <div class="text" id="t3"><p style="font-size: 30px;">2015</p><br><p>국군의 조직과 편성은 법률로 정한다. 대한민국은 국제평화의 유지에 노력하고 침략적 전쟁을 부인한다. 모든 국민은 종교의 자유를 가진다. 선거운동은 각급 선거관리위원회의 관리하에 법률이 정하는 범위안에서 하되, 균등한 기회가 보장되어야 한다.</p></div>
+                </div>
+                <div class="o" id="o1"></div>
+                <div class="o" id="o2"></div>
+                <div class="o" id="o3"></div>
+
+                
+            </div>
+      </div>
+   </body>
+</html>

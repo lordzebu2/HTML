@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>            
+            #redbox{
+                width: 50px;
+                height: 50px;
+                left: 0;
+                top: 0;
+                position: absolute;
+                background-color: red;
+            }
+            input{
+                position: absolute;
+            }
+            input#up{ /* 띄워쓰기를 안하면 input중에서 id가 up인 녀석 */
+                bottom: 30px;
+                left: 50px;
+            }
+            input#right{
+                bottom: 0;
+                left: 100px;
+            }
+            input#down{
+                bottom: 0;
+                left: 50px;
+            }
+            input#left{
+                bottom: 0;                
+            }
+            #wrap{
+                border: 1px solid black;
+                width: 400px;
+                height: 350px;
+                position: relative;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="wrap" onkeydown="keymove(event)" tabindex="1">
+            <div id="redbox"></div>
+            <input type="button" value="◀37" onclick="move(1)" id="left">
+            <input type="button" value="▲38" onclick="move(2)" id="up">
+            <input type="button" value="▶39" onclick="move(3)" id="right">
+            <input type="button" value="▼40" onclick="move(4)" id="down">
+            
+        </div>
+
+        <script>
+            
+            
+            var x=0;//left 값
+            var y=0;//top 값
+            
+           function move(num){
+                switch(num){
+                    case 1: x=x-10; // 왼
+                    break;
+                    case 2: y=y-10;// 상
+                    break;
+                    case 3: x=x+10; // 우
+                    break;
+                    case 4: y=y+10; // 하
+                    break;
+                }
+                document.querySelector("#redbox").style.top=y+"px";
+                document.querySelector("#redbox").style.left=x+"px";
+            }
+
+
+
+
+
+            function keymove(e){
+                move(e.keyCode-36);// 37~ 40
+            }
+        </script>
+    </body>
+</html>

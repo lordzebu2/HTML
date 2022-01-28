@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <style>
+            *,html,body{
+                margin: 0;
+                padding: 0;
+            }            
+            /* html,body{
+                height: 100%;
+            } */
+            
+            #wrap{                
+                /*height:100vh;*//*view height , view width = vw*/                
+                /*height: 100%;*/
+            }
+            .box{
+                width: 100%;
+                height: 100vh;
+            }
+            .page1{
+                background-color: red;
+            }
+            .page2{
+                background-color: green;
+            }
+            .page3{
+                background-color: blue;
+            }
+            
+            .menu{
+                position: fixed;
+                background-color: skyblue;
+                width: 100%;
+                height: 70px;
+                left: 0;
+                top: 0;
+            }
+            .menu ul{
+                display: flex;
+                justify-content: space-around;
+            }
+            .menu ul li{
+                list-style: none;
+                padding-top: 10px;
+                font-size: 32px;
+                font-weight: bold;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="menu">
+                <ul>
+                    <li>메뉴1</li>
+                    <li>메뉴2</li>
+                    <li>메뉴3</li>
+                    <li>메뉴4</li>
+                    <li>메뉴5</li>
+                </ul>
+            </div>
+            <div class="box page1"></div>
+            <div class="box page2"></div>
+            <div class="box page3"></div>
+        </div>
+    </body>
+</html>

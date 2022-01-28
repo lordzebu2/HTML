@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>   
+    <title>Document</title>
+    <style>
+        .box-container{
+        width: 350px;
+        border: 2px solid #09c;
+        background-color: #d7f5ff;
+        }
+        .box-container .box{
+        width: 80px;
+        height: 40px;
+        border: 2px solid red;
+        background-color: #ffe7d5;
+        }
+
+        /* 눈에는 안보이지만 빈 div 하나만들기, 클리어보스랑  결과 똑같음. */
+        /* .box-container:after{
+            content: ""; /*내용없음*/
+            display: block;  /*dispaly가 block 이므로 div랑 같음*/
+            clear: both;  /* clear 속성 추가*/
+            
+        } 
+        */
+
+        </style>
+</head>
+<body>
+    <!--float을 양쪽 정렬시 사용하는 공식임 그냥 암기.
+        레프트, 라이트, 보스 반드시 이 순서대로-->
+    <div class="box-container">
+        <div class="box" style="float: left">박스1</div>
+        <div class="box" style="float: right">박스2</div>
+        <div style="clear: both"></div>
+        </div>
+        <div>박스 아래에 나타나야 하는 내용</div>
+    
+</body>
+</html>
+
+    

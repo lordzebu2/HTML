@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <input type="text" id="first"><input type="text" id="last">
+
+        <input type="button" value="+" onclick="plus()">
+        <input type="button" value="-" onclick="minus()">
+        <input type="button" value="x" onclick="multy()">
+        <input type="button" value="/" onclick="divide()">
+
+        <div id="result"></div>
+
+        <pre>
+            10과 5의 더한 값, 뺀 값, 곱한 값, 나눈 값을 출력 하는 버튼을 각각 만들자.(4개)
+            <input type="button" value="+" onclick="addInput()"> 이거 참조!
+            // input 2개만들고 입력받은 값으로 계산 하기
+        </pre>
+        <script>
+            function plus(){
+                var fir = document.querySelector("#first").value;
+                var las = document.querySelector("#last").value;
+                //document.getElementById("result").innerHTML=10+5;
+                document.getElementById("result").innerHTML=fir+las;//문자니까 숫자로 변경
+            }
+            function minus(){
+                var fir = document.querySelector("#first").value;
+                var las = document.querySelector("#last").value;
+                //document.getElementById("result").innerHTML=10-5;
+                document.getElementById("result").innerHTML=fir-las;
+            }
+            function multy(){
+                var fir = document.querySelector("#first").value;
+                var las = document.querySelector("#last").value;
+                //document.getElementById("result").innerHTML=10*5;
+                document.getElementById("result").innerHTML=fir*las;
+            }
+            function divide(){
+                var fir = document.querySelector("#first").value;
+                var las = document.querySelector("#last").value;
+                //document.getElementById("result").innerHTML=10/5;
+                document.getElementById("result").innerHTML=fir/las;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8">
+      <title>Untitled</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+          *,html,body{
+              margin: 0;
+              padding: 0;
+          }
+          #box{
+              width: 1080px;
+              height: 800px;
+              border: 1px solid black;
+              margin: 0 auto; 
+              position: relative;
+          }
+          
+      </style>
+   </head>
+   <body>
+       <div onmousedown="start(event)" onmouseup="stop(event)" id="box"></div>
+        <p id="show"></p>
+       <script>
+           var x1 = 0;
+           var y1 = 0;
+           var x2 = 0;
+           var y2 = 0;
+
+           function start(e){
+            x1 = e.offsetX;
+            y1 = e.offsetY;
+
+            var coor = "좌표: ("+x1+" , "+y1+")";
+            document.getElementById("show").innerHTML = coor;
+
+           
+           }
+           function stop(e){
+            x2 = e.offsetX;
+            y2 = e.offsetY;
+
+            var coor = "끝좌표: ("+x2+" , "+y2+")";
+            document.getElementById("show").innerHTML = coor;
+
+            var box = document.createElement("box");
+            box.style.position="absolute";
+            box.style.width=(x2-x1)+"px";
+            box.style.height=(y2-y1)+"px";
+            box.style.backgroundColor="blue";
+            box.style.top=x1+"px";
+            box.style.left=y1+"px";
+            
+
+            document.body.appendChild(box);
+           }
+       </script>
+   </body>
+</html>

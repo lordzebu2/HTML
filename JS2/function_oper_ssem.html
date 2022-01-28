@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <input type="text" id="view">
+
+
+        <input type="button" onclick="btn1(1)" value="1">
+        <input type="button" onclick="btn1(2)" value="2">
+        <input type="button" onclick="btn1(3)" value="3">
+        <input type="button" onclick="btn1('+')" value="+">
+        <input type="button" onclick="btn1('-')" value="-">
+        <input type="button" onclick="btn1('=')" value="=">
+
+        <script>
+            var first;
+            var op;
+            var bool=false;
+
+            function btn1(num){
+                var data = document.getElementById("view").value;// 원래 있던 String 값을 들고온다.                
+
+                if(num=="+"){
+                    first=data;
+                    document.getElementById("view").value="";
+                    data="";
+                    op="+";
+                }else if(num=="-"){
+                    first=data;
+                    document.getElementById("view").value="";
+                    data="";
+                    op="-";
+                }else if(num=="="){
+                    var result;
+                    if(op=="+"){
+                        result=Number(first)+Number(data);
+                    }else if(op=="-"){
+                        result=Number(first)-Number(data);
+                    }
+                    document.getElementById("view").value = result;
+                    first="";
+                    data="";
+                    bool=true;
+                }else{                    
+                    if(bool==false){                                                
+                        data= data+num;// 1번 버튼이니까 원래값을 들고와서 + 1 해줍니다. <= 문자열 더하기 임                        
+                    }else{                                                
+                        data= num;// 두번째 계산시 초기화 하는 부분                        
+                        bool=false;
+                    }
+                    document.getElementById("view").value=data; // 결과를 다시 view에 넣는다
+                    
+                }
+            }
+        </script>
+    </body>
+</html>

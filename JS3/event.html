@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p>Select a new car from the list.</p>
+    <select id="mySelect" onchange="myFunction()">
+        <option value="Audi">Audi
+        <option value="BMW">BMW
+        <option value="Mercedes">Mercedes
+        <option value="Volvo">Volvo
+    </select>
+    <p>When you select a new car, a function is triggered which outputs the value of
+        the selected car.</p>
+    <p id="demo"></p>
+
+    <select id="colorSelect" onchange="mycolor()">
+        <option value="red">빨강
+        <option value="blue">파랑
+        <option value="green">녹색        
+    </select>
+
+    
+    <div onmousemove="mycolor()" onmouseout="clearCoor()"></div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("mySelect").value;
+            document.getElementById("demo").innerHTML = "You selected: " + x;
+        }
+        function mycolor(){
+            var col = document.getElementById("colorSelect").value
+            if(col=="red"){
+                document.getElementById("demo").style.color=col;
+            }
+            
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        *,
+        html,
+        body {
+            margin: 0;
+            padding: 0;                       
+        }
+
+        .wrap{
+            margin: 0 auto;
+            width: 900px;
+            height: 800px;
+            background-color: black;           
+            display: flex;
+            flex-flow: row wrap;
+            padding: 10px;
+        }
+        header{
+            width: 100%;
+            height: 24%;
+            background-color: red;
+            margin-bottom: 1%;
+        }
+        nav{
+            width: 25%;
+            height: 65%;
+            background-color: blue;
+                         
+        }
+        #contents{
+            width: 74%;
+            height: 65%;
+            background-color: green;
+            margin-left: 1%;
+                      
+        }
+        footer{
+            width: 100%;
+            height: 9%;
+            background-color: hotpink;
+            margin-top: 1%          
+                  
+        }
+        @media(max-width:800px){
+            .wrap{
+                flex-flow: column;
+            }
+            header{
+                height: 25%;
+            }
+            nav{
+                width: 100%;
+                height: 20%;
+                margin-bottom: 1%;
+            }
+            #contents{
+                width: 100%;
+                height: 40%;
+                margin-left: 0;
+            }
+            footer{
+                width: 100%;
+                height: 15%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>Header</header>
+        <nav>Nav</nav>
+        <div id="contents">contents</div>    
+        <footer>Footer</footer>     
+    </div>
+</body>
+
+</html>

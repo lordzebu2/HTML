@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <input type="text" id="view">
+
+
+        <input type="button" onclick="btn1(1)" value="1">
+
+        <script>
+            function btn1(num){
+                var data = document.getElementById("view").value;// 원래 있던 String 값을 들고온다.
+                data= data+num;// 1번 버튼이니까 원래값을 들고와서 + 1 해줍니다. <= 문자열 더하기 임
+                document.getElementById("view").value=data; // 결과를 다시 view에 넣는다
+            }
+        </script>
+    </body>
+</html>

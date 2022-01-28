@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>    
+    <title>Document</title>
+    <style>
+        /*
+            화면 구성 및 배치에는 절때로 absolute 금지!!!! 
+            display
+            postion은 내부의 내용 꾸밀때 사용!
+        */
+
+
+        *,html,body{
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap{
+            width: 1024px;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+        .banner{
+            width: 100%;/* border 계산이 된다면 사이즈를 직접 주셔도됩니다.*/
+            height: 200px;
+            background-color: greenyellow;
+            margin-bottom: 5px;
+        }
+        .topmenu{
+            height: 70px;
+            background-color: skyblue;
+            margin-bottom: 5px;
+        }
+        .center{
+            font-size: 0;
+            margin-bottom: 5px;
+        }
+        .leftmenu{
+            width: calc(30% - 5px);
+            margin-right: 5px;
+            height: 500px;
+            background-color: pink;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .content{
+            width: 70%;            
+            height: 500px;
+            background-color: hotpink;
+            display: inline-block;
+        }
+        .bottom{
+            height: 200px;
+            background-color: gray;
+        }
+
+        .topul{
+            /*border: 1px solid red;*/
+            padding-top: 20px;
+        }
+        
+        .topul li{
+            /*border: 1px solid blue;*/
+            margin-left: 20px;
+        }
+
+        .topul li{
+            display: inline-block;
+        }
+
+        .leftul{
+            font-size: 24px;
+            /*border: 1px solid red;*/
+        }
+        .leftul li{
+            /*border: 1px solid blue;*/
+            margin-bottom: 10px;
+            list-style: none;
+            padding-left: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="banner">배너</div>
+        <div class="topmenu">
+            <ul class="topul">
+                <li>메뉴1</li>
+                <li>메뉴2</li>
+                <li>메뉴3</li>
+            </ul>
+
+        </div>
+        <div class="center">
+            <div class="leftmenu">
+
+                <ul class="leftul">
+                    <li>메뉴1</li>
+                    <li>메뉴2</li>
+                    <li>메뉴3</li>
+                </ul>
+
+            </div>
+            <div class="content"></div>
+        </div>
+        <div class="bottom"></div>
+    </div>
+</body>
+</html>

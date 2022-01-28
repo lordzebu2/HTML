@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div onmousemove="myFunction(event)" onmouseout="clearCoor()"></div>
+    <p>마우스를 위에 네모상자에 올리면 네모 상자 안에서의 위치를 알려줍니다.</p>
+    <p id="demo"></p>
+    <script>
+        function myFunction(e) {
+            // var x = e.clientX; //문서 기준 좌표
+            // var y = e.clientY;
+
+            // var x = e.screenX; //모니터 기준 좌표
+            // var y = e.screenY;
+
+            var x = e.offsetX; //현재 오브젝트 기준 좌표
+            var y = e.offsetY;
+            var coor = "Coordinates: (" + x + "," + y + ")";
+            document.getElementById("demo").innerHTML = coor;
+        }
+        function clearCoor() {
+            document.getElementById("demo").innerHTML = "";
+        }
+    </script>
+</body>

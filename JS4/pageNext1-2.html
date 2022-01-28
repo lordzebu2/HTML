@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        
+<!--       js44-1.html  
+        <form action="js44.html">
+            아이디 : <input type="text" name="id"><br>
+            비밀번호 : <input type="password" name="pw"><br>
+            <input type="submit" value="회원가입">
+        </form>
+        정보를 가지고 갈 필요가 없다면 굳이 submit을 쓸 필요가 없다.
+        정보를 가지고 가는데 숨겨야 되는 정보가 있다면 반드시 submit을 사용하고
+        from의 method="post"로 해야한다.
+-->
+
+        <form action="js44-2.html" name="frm">
+            아이디 <input type="text" name="id"><br>
+            비밀번호 <input type="password" name="pw"><br>
+            비밀번호 확인 <input type="password" name="repw"><br>
+            이름 <input type="text" name="name"><br>
+            이메일 <input type="text" name="email"><br>
+            <input type="button" value="회원가입" onclick="reg()">
+            <input type="reset" value="취소">
+        </form>
+
+
+        <script>
+            function reg(){
+                //alert(1);
+                var id = document.frm.id;
+                var pw = document.frm.pw;
+                var repw = document.frm.repw;
+                var name = document.frm.name;
+                var email = document.frm.email;
+                var regex=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+
+                if(id.value == "" || id.value.indexOf(" ") != -1 || id.value.length > 9){
+                    alert("아이디는 8자 이하 / 빈칸을 포함 하면 안됩니다.");
+                    id.focus();
+                }else if(pw.value == "" || pw.value.indexOf(" ") != -1  || pw.value.length > 13 || pw.value.length<7){
+                    alert("비밀번호를 제대로 입력해 주세요");
+                    pw.focus();
+                }else if(repw.value == "" || repw.value.indexOf(" ") != -1  || repw.value.length > 13){
+                    alert("비밀번호를 제대로 입력해 주세요");
+                    repw.focus();
+                }else if(repw.value != pw.value ){
+                    alert("비밀번호와 비밀번호 확인은 같아야 합니다.");
+                    pw.value="";
+                    repw.value="";
+                    pw.focus();
+                }else if(regex.test(email.value)==false){
+                    alert("이메일 형식이 맞지 않습니다.");
+                    email.focus();
+                }else{
+                    alert("회원가입");
+                    document.frm.submit();
+                }
+            }
+
+        </script>
+
+
+        
+<!--       js44-2.html
+        환영합니다.
+        <a href="44-1.html">처음으로 돌아가기</a>
+-->
+    </body>
+</html>

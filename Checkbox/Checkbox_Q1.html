@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        *,html,body{
+            margin: 0;
+            padding: 0;
+        }
+        
+
+        input[type=radio]{
+            display: none;
+        }
+        input[type=radio]:checked + label{
+            background-color: blue;
+        }
+        input[type=radio]:checked .sub{
+            display: block;            
+        }
+
+      
+       
+
+        .wrap{
+            width: 1080px;
+            border: 1px solid black;
+            height: 100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        label{           
+            border: 1px solid black;            
+            padding: 20px;            
+        }
+        .sub{
+            border: 1px solid black;
+            position: absolute;            
+            top: 100px;
+            left: 50%;
+            transform: translate(-50%);
+            width: 1000px;
+            height: 500px;
+            background-color: greenyellow;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class = "wrap">
+        <input type="radio" name="box" id="box1">
+        <label for="box1">1번</label> 
+        
+
+        <input type="radio" name="box" id="box2">
+        <label for="box2">2번</label>
+
+        <input type="radio" name="box" id="box3">
+        <label for="box3">3번</label>
+
+        <input type="radio" name="box" id="box4">
+        <label for="box4">4번</label>
+
+        <input type="radio" name="box" id="box5">
+        <label for="box5">5번</label>
+
+        <div for = "box1" class = "sub">서브메뉴</div>
+
+        
+        
+    </div>
+    
+    
+
+</body>
+</html>

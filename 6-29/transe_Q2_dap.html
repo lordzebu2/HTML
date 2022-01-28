@@ -1,0 +1,147 @@
+
+<html>
+    <head>
+        <style>
+            .wrap{
+                width: 225px;
+                height: 225px;
+                position: absolute;
+                padding: 0;                
+            }
+            .box1-1{
+                position: absolute;
+                width: 225px;
+                height: 225px;
+                
+            }
+            .box1-2{
+                position: absolute;
+                width: 225px;
+                height: 225px;                
+                font-size: 0;
+                font-weight: bolder;
+                text-align: center;
+                color: white;
+                transition: all 1s;
+            }
+            
+            .wrap:hover .box1-2{
+                background: rgba(255,0,0,0.3);
+                font-size: 50px;      
+            }
+            
+            
+            .wrap2{
+                left: 300px;
+                width: 225px;
+                height: 225px;
+                position: absolute;
+                padding: 0;      
+            
+            }
+            .box2-1{
+                position: absolute;
+                width: 225px;
+                height: 225px;
+                
+                
+            }
+            .box2-2{
+                position: absolute;
+                width: 225px;
+                height: 225px;                
+                transition: all 1s;
+                box-sizing: border-box;
+
+            }            
+            .wrap2:hover .box2-2{
+                border: 20px solid red;
+                
+            }
+            
+            .wrap3{
+                left: 600px;
+                width: 225px;
+                height: 225px;
+                position: absolute;
+                padding: 0;
+            
+            }
+            .box3-1{
+                position: absolute;
+                width: 225px;
+                height: 225px;
+            /*  z-index: 2;     */
+            }
+            .box3-2{
+                position: absolute;
+                width: 225px;
+                height: 225px;
+                opacity: 0;  
+                transition: all 1s;
+            }            
+            .wrap3:hover .box3-2{
+                opacity: 1;
+             /* z-index: 3;     */
+            }
+            
+            
+            .wrap4{
+                left: 900px;
+                width: 225px;
+                height: 225px;
+                position: absolute;
+                padding: 0;
+                overflow: hidden;
+            
+            }
+            .box4-1{
+                position: absolute;
+                width: 225px;
+                height: 225px;            
+            }
+            .box4-2{
+                position: absolute;                
+                width: 225px;
+                top:113px;
+                height: 112px;
+                background-color: red;
+                border-radius: 112px 113px 0 0;
+                transform-origin: bottom;
+                transform: rotate(180deg);                
+                opacity: 0.3;
+                transition: all 1s;
+            }            
+            .wrap4:hover .box4-2{
+                transform: rotate(360deg);                                
+            }
+            div div img{
+            width: 100%;
+            height: 100%;
+         }
+            
+            
+        </style>
+    </head>
+    <body>
+       <div class="wrap">
+            <div class="box1-1"><img src="너부리야.png"></div>
+            <div class="box1-2">AOA</div>          
+       </div>
+      
+       <div class="wrap2">
+            <div class="box2-1"><img src="너부리야.png"></div>
+            <div class="box2-2"></div>          
+       </div>
+      
+       <div class="wrap3">
+            <div class="box3-1"><img src="너부리야.png"></div>
+            <div class="box3-2"><img src="포로리야.png"></div>          
+       </div>
+       <div class="wrap4">
+            <div class="box4-1"><img src="너부리야.png"></div>
+            <div class="box4-2"></div>          
+       </div>
+        
+    </body>
+</html>

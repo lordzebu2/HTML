@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            #result{
+                width: 300px;
+                height: 300px;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        html5에서 새로 나온 객체 접근 방법
+        쿼리셀렉터(Query Seletor)
+
+        <div id="box1"> 이것은 아이디</div>
+
+        <div class="box2"> 이것은 클래스1</div>
+        <div class="box2"> 이것은 클래스2</div>
+
+        <div id="box3">
+            <div>내용</div>
+        </div>
+
+        <p>이것은 p 태그</p>
+
+        <div id="result"></div>
+
+        <script>
+            var id1 = document.querySelector("#box1").innerHTML;
+            var class1 = document.querySelectorAll(".box2");// 배열
+            var tag1 = document.querySelector("p").innerHTML;
+            var box3 = document.querySelector("#box3 div").innerHTML;
+
+            var result = document.querySelector("#result");
+
+            result.innerHTML=id1;
+            result.innerHTML+=class1[0].innerHTML;
+            result.innerHTML+=class1[1].innerHTML;
+            result.innerHTML+=tag1;
+            result.innerHTML+=box3;
+
+        </script>
+
+    </body>
+</html>

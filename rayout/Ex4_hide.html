@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            *,html,body{
+                margin: 0;
+                padding: 0;
+            }
+            .container{
+                width: 100%;
+                display: flex;
+                flex-flow: row nowrap;
+            }
+            .container div{
+                min-width: 150px;
+                min-height: 150px;
+            }
+            .c1{
+                background-color: red;
+                position: relative;
+            }
+            .c2{
+                background-color: green;
+                position: static;
+            }
+            .c3{
+                background-color: blue;
+            }
+            .c3{
+                position: absolute;
+                width: 250px;
+                height: 100%;
+            }
+            .c2{
+                width: 100%;
+            }
+            .c3{
+                left: 100%;
+            }
+            @media (min-width:800px){
+                .c3{
+                    position: relative;
+                    left: auto;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="c1"></div>
+            <div class="c2">
+                오프 캔버스
+                기본적으로 컨텐츠에서 잘안 쓰는 애들을 오른쪽 끝에 배치하고
+                창을 줄이면 사라지는게 아니고 좌우 스크롤이 생기면서
+                화면 바깥으로 안보이게 하는 방법
+                앱 메뉴, 탐색 메뉴등을 주로 배치 한다.
+            </div>
+            <div class="c3"></div>
+        </div>
+    </body>
+</html>

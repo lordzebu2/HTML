@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,html,body{
+            margin: 0;
+            padding: 0;
+           
+        }
+        #wrap{     
+           
+            width: 1024px;
+            height: 900px;            
+            border: 1px solid black;
+            margin: 0 auto;
+            background-image: linear-gradient(to top, red, orange, yellow,green,blue,navy, purple);
+
+        }
+        .top{           
+            
+            display: inline-block;
+
+        }
+
+        #textbox{
+            top: 350px;
+
+        }
+       .box{
+            width: 250px;
+            height: 250px;
+            margin: 0 auto;            
+            display: inline-block;
+            position: absolute;
+        }
+        .text{
+            width: 1024px;
+            height: 300px;
+            font-size: 25px;
+           
+            position: absolute;
+            
+        }     
+        #box1{
+            font-size: 50px;                
+            
+            top: 140px;
+            left: 900px;
+            width: 300px;
+            height: 100px;
+            z-index: 1;
+
+        }
+        #font{
+            color: white;
+        }
+        #font1{
+            color: black;
+           
+        }
+        #font2{
+            color: white;
+            
+        }
+        #font3{
+            color: white;
+            font-size: 50px;
+            text-align: center;
+           
+            
+        }
+        #box2{
+            border-radius: 50%;
+            box-shadow: 10px 10px 10px black;
+            background-image: linear-gradient( to top, white, skyblue);
+            top:50px;
+            left: 820px;
+        }
+       
+
+        #box3{
+            background-image: url("포로리야.png");
+            box-shadow: 10px 10px 10px gray;
+            top: 50px;
+            right: 820px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class = "top">
+            <div class = "box" id="box1">
+                <div id="font"><p><i>PPT 짱쉽다</i></p></div>
+            </div>
+           
+            <div class = "box" id="box2"></div>
+            
+            <div class = "box" id="box3"></div>
+            
+        </div>
+
+        <div class = "text" id = "textbox">
+
+            <div id="font1"><p>발표 전 ppt를 인쇄하여 청중께 드리세요! 센스있는 신입사원이 될 수 있습니다.</p><br>
+                <p>애니메이션 기능은 최소화 해주세요.</p><br>
+                <p>색은 되도록 3가지 이상 쓰지 마세요.</p><br>
+                <p>영 디자인 감각이 없다면, 회사 공식 템플릿을 사용하세요</p><br>
+            </div>
+
+            <div id="font2"><p>PPT 내에 첨부된 영상 or 폰트 파일은 혹시 모르니 꼭 USB에 넣어가세요.</p><br>
+                <p>텍스트 페이지의 20% 정도로 맞춰주세요. 가독성이 좋아집니다.</p><br>
+            </div>
+
+            <div id="font3"><p>모두 모두 A+ 받으세요!!</p></div>
+        </div>
+            
+        
+    </div>
+</body>
+</html>

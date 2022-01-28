@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            ul{
+                padding: 0;                
+            }
+            li{
+                list-style: none;
+                width: 50px;
+            }
+            ul.menu{ /* ul 중에 클래스가 menu인것*/
+                border: 1px solid black;
+                display: flex;                
+            }
+            ul.menu>li{
+                margin-left: 10px;
+                position: relative;
+            }
+            .menu ul{
+                border: 1px solid red;
+                position: absolute;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="menu">
+            <!-- <li onmouseover="over1()" onmouseout="out1()">메뉴1 -->
+            <li onmouseover="over(0)" onmouseout="out(0)">메뉴1
+                <ul>
+                    <li>서브1</li>
+                    <li>서브2</li>
+                </ul>
+            </li>
+            <!-- <li onmouseover="over2()" onmouseout="out2()">메뉴2 -->
+            <li onmouseover="over(1)" onmouseout="out(1)">메뉴2    
+                <ul>
+                    <li>서브3</li>
+                    <li>서브4</li>
+                </ul>
+            </li>
+        </ul>
+
+        <script>
+            function over(idx){
+                document.querySelectorAll(".menu ul")[idx].style.display="block";
+            }
+            function out(idx){
+                document.querySelectorAll(".menu ul")[idx].style.display="none";
+            }
+            // function over1(){
+            //     document.querySelectorAll(".menu ul")[0].style.display="block";
+            // }
+            // function over2(){
+            //     document.querySelectorAll(".menu ul")[1].style.display="block";
+            // }
+            // function out1(){
+            //     document.querySelectorAll(".menu ul")[0].style.display="none";
+            // }
+            // function out2(){
+            //     document.querySelectorAll(".menu ul")[1].style.display="none";
+            // }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <style>
+            *,html,body{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            #wrap{
+                width: 100%;
+                height: 100vh;
+                border: 1px solid black;
+            }
+            .banner{
+                width: 100%;
+                background-color: pink;
+                text-align: center;
+            }
+            .banner img{
+                width: 50%;
+            }
+
+            /* 일종의 if문입니다. 조건이 창의 크기만을 따집니다.
+                min-width의 의미는 "크다면" 이라는 뜻입니다.
+                max-widht는 "작다면"의 의미 입니다.
+            */
+            @media (min-width:768px){ 
+                .banner img{
+                    width: 25%;                    
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="banner">
+                <img src="aoa1.png">
+            </div>
+        </div>
+    </body>
+</html>

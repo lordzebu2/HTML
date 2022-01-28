@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            #result{
+                width: 300px;
+                height: 300px;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="button" value="+" onclick="addInput()">
+        <input type="button" value="-" onclick="delInput()">
+        <div id="result"></div>
+        <script>
+            var idx=0;          
+
+            function addInput(){
+                idx++;
+               var inputFile = document.createElement("input");
+               inputFile.setAttribute("type","file");
+               inputFile.setAttribute("id","num"+idx);// num1, num2
+
+
+               //document.querySelector("#result").appendChild(inputFile);
+               document.getElementById("result").appendChild(inputFile);
+            }
+            function delInput(){
+               //var lastBox = document.getElementById("num"+idx);
+               var lastBox = document.querySelector("#num"+idx);
+               document.querySelector("#result").removeChild(lastBox);
+                idx--;
+            }
+        </script>
+    </body>
+</html>

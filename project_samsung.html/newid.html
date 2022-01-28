@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8">
+      <title>Untitled</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+    <title>Insert title here</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <style>
+
+        *,html,body{
+            margin: 0;
+            padding: 0px;
+            background-color: black;
+        }
+        .mainbar {
+       width: 1440px;
+       height: 95px;
+       margin: 0 auto;
+       position: relative;
+    }
+    .mainbar div{
+        font-size: 33px;
+        color: white;         
+        width: 195px;
+        margin-top: 25px;
+        float: left;
+        font-weight:bold;
+    }
+    .border{         
+       width: calc(100% - 2px);   
+       position: absolute;   
+       top: 100px;
+       border: 1px solid gainsboro;
+    }
+    .main{
+      border: 1px solid gainsboro;
+      position: absolute;       
+      width: 800px;
+      height: 900px;
+      left: 50%;
+      transform: translate(-50%);
+      top: 190px;
+      border-radius: 45px 45px 45px 45px ;
+      
+    }
+    .title{
+        font-size: 33px;
+        font-weight: 500;        
+        margin-top: 30px;
+        margin-bottom: 30px;
+        color: white
+    }
+    .subtitle{
+        font-size: 19px;
+        font-weight: 500;        
+        margin-top: 30px;
+        margin-bottom: 10px;
+        color: white
+    }
+
+    .login{
+        margin: 0 auto;          
+        position: relative;
+        width: 80%;
+        height: 500px;
+                
+    }
+    .idtxb{        
+      width: 100%;
+      height: 70px;
+      margin-top: 30px;       
+      border-top: 0px;
+      border-left: 0px;
+      border-right: 0px;
+      border-bottom: 1px solid gray;
+      color: rgb(0, 114, 222);
+      font-size: 23px;
+    }
+    .pwtxb{        
+      width: 100%;
+      height: 70px;        
+      margin-top: 50px;
+      border-top: 0px;
+      border-left: 0px;
+      border-right: 0px;
+      border-bottom: 1px solid gray;
+      color: rgb(0, 114, 222);
+      font-size: 23px;
+    }
+    .fntxb{        
+      width: 100%;
+      height: 70px;        
+      margin-top: 50px;
+      border-top: 0px;
+      border-left: 0px;
+      border-right: 0px;
+      border-bottom: 1px solid gray;
+      color: rgb(0, 114, 222);
+      font-size: 23px;
+    }
+    .nametxb{        
+      width: 100%;
+      height: 70px;        
+      margin-top: 50px;
+      border-top: 0px;
+      border-left: 0px;
+      border-right: 0px;
+      border-bottom: 1px solid gray;
+      color: rgb(0, 114, 222);
+      font-size: 23px;
+    }
+    .yeartxb{        
+      width: 30%;
+      height: 70px;        
+      margin-top: 50px;
+      border-top: 0px;
+      border-left: 0px;
+      border-right: 0px;
+      border-bottom: 1px solid gray;
+      color: rgb(0, 114, 222);
+      font-size: 23px;
+      float: left;
+    }
+    .monthtxb{        
+      width: 30%;
+      height: 70px;        
+      margin-top: 50px;
+      margin-left: 30px;
+      border-top: 0px;
+      border-left: 0px;
+      border-right: 0px;
+      border-bottom: 1px solid gray;
+      color: rgb(0, 114, 222);
+      font-size: 23px;
+      float: left;
+    }
+    .daytxb{        
+      width: 30%;
+      height: 70px;        
+      margin-top: 50px;
+      margin-left: 30px;
+      border-top: 0px;
+      border-left: 0px;
+      border-right: 0px;
+      border-bottom: 1px solid gray;
+      color: rgb(0, 114, 222);
+      font-size: 23px;
+      float: left;
+    }
+    .backbt{
+        position: absolute;
+        left: 23%;
+        transform: translate(-50%);
+        width: 35%;
+        height: 58px;
+        border-radius: 50px 50px 50px 50px;
+        border: 1px solid white;
+        color: white;
+        font-size: 20px;
+        background-color: rgb(43, 43, 43);
+        bottom: -62%;
+    }
+    .creatbt{
+        position: absolute;
+        right: -10%;
+        transform: translate(-50%);
+        width: 35%;
+        height: 58px;
+        border-radius: 50px 50px 50px 50px;
+        border: 1px solid white;
+        color: white;
+        font-size: 20px;
+        background-color: rgb(0, 114, 222);
+        bottom: -62%;
+    }
+    .idani{
+        position: absolute;          
+        color: gray;
+        font-size: 23px;
+        width: 100%;
+        height: 55px;
+        top: 155px;
+        z-index: 2;                   
+    }
+    .pwani{
+      position: absolute;          
+        color: gray;
+        font-size: 23px;
+        width: 100%;
+        height: 55px;
+        top: 276px;
+        z-index: 2;       
+    }
+    .fnani{
+      position: absolute;          
+        color: gray;
+        font-size: 23px;
+        width: 100%;
+        height: 55px;
+        top: 398px;
+        z-index: 2;       
+    }
+    .nameani{
+      position: absolute;          
+        color: gray;
+        font-size: 23px;
+        width: 100%;
+        height: 55px;
+        top: 519px;
+        z-index: 2;       
+    }
+    .yearani{
+      position: absolute;          
+        color: gray;
+        font-size: 23px;
+        width: 30%;
+        height: 50px;
+        top: 645px;
+        z-index: 2;   
+    }
+    .monthani{
+      position: absolute;          
+        color: gray;
+        font-size: 23px;
+        width: 30%;
+        height: 50px;
+        top: 645px;
+        z-index: 2;
+        left: 50%;
+        transform: translate(-50%);      
+    }
+    .dayani{
+      position: absolute;          
+        color: gray;
+        font-size: 23px;
+        width: 30%;
+        height: 50px;
+        top: 645px;
+        z-index: 2;
+        right: 0px;
+
+        
+        transform: translate();
+        font-weight: bold;
+        display: inline-block;
+    }
+  
+    
+    input{
+        outline-style: none;
+    }  
+   
+    </style>
+   </head>
+   <body>
+    <div class="mainbar">
+        <div style="cursor: pointer;" onclick="location.href='main.html'" >SAMSONG</div>
+        <div>Account</div>
+    </div>
+    <div class="border"></div>
+   <div class="wrap">
+     <div class="main">
+         
+         <div class="login">
+            <div class="title">삼송계정 만들기</div>
+            <div class="subtitle">계정으로 사용할 이메일 주소를 입력하세요.</div>
+             <input type="text" class="idtxb" id="idvalue">
+             <div class="idani">이메일 주소</div>
+             <input type="text" class="pwtxb" id="pwvalue">
+             <div class="pwani">비밀번호</div>
+             <input type="text" class="fntxb" id="fnvalue">
+             <div class="fnani">성</div>
+             <input type="text" class="nametxb" id="namevalue">
+             <div class="nameani">이름</div>
+             <input type="text" class="yeartxb" id="yearvalue">
+             <div class="yearani">년</div>
+             <input type="text" class="monthtxb" id="monthvalue">
+             <div class="monthani">월</div>
+             <input type="text" class="daytxb" id="dayvalue">
+             <div class="dayani">일</div>
+             <input type="submit" value="뒤로" class="backbt" style="cursor: pointer;" onclick="location.href='login.html'">
+             <input type="submit" value="생성" class="creatbt" style="cursor: pointer;">     
+         </div>
+     </div>
+   </div>
+
+   <script>
+       $(document).ready(function(){
+		$(".searchBar_location").mouseenter(function(){
+			$(".searchBar_location").animate({
+				
+			})
+		})
+	})  
+
+
+    $(document).ready(function(){
+            $(".idani").click(function(){
+
+                document.getElementById("res").innerHTML
+                $(".idtxb").css("border-bottom","1px solid rgb(0, 114, 222)");
+                $(".idani").css("color","rgb(0, 114, 222)");
+                $(".idtxb").focus();
+                $(".idani").animate({
+                "font-size":"16px", top : "125px", height : "20px"                                   
+            });
+                                    
+        });
+        
+        $(".idtxb").blur(function(){
+            if(document.getElementById("idvalue").value == ""){
+                $(".idtxb").css("border-bottom","1px solid gray");
+                $(".idani").css("color","gray");                
+                $(".idani").animate({
+                "font-size":"23px", top : "155px", height : "55px"                                                         
+                });
+            }else{
+                $(".idani").css("color","gray");
+                $(".idtxb").css("border-bottom","1px solid gray");
+                $(".idtxb").css("color","gray");
+            }                     
+        });
+
+
+             
+        $(".pwani").click(function(){
+                $(".pwtxb").css("border-bottom","1px solid rgb(0, 114, 222)");
+                $(".pwani").css("color","rgb(0, 114, 222)");
+                $(".pwtxb").focus();
+                $(".pwani").animate({
+                "font-size":"16px", top : "246px", height : "20px"                                   
+            });
+                                    
+        });        
+        $(".pwtxb").blur(function(){
+            if(document.getElementById("pwvalue").value == ""){
+                $(".pwtxb").css("border-bottom","1px solid gray");
+                $(".pwani").css("color","gray");          
+                $(".pwani").animate({
+                "font-size":"23px", top : "276px", height : "55px"                                                         
+                });
+            }else{
+                $(".pwani").css("color","gray");
+                $(".pwtxb").css("border-bottom","1px solid gray");
+                $(".pwtxb").css("color","gray");
+            }                     
+        });
+
+
+
+
+
+        $(".fnani").click(function(){
+                $(".fntxb").css("border-bottom","1px solid rgb(0, 114, 222)");
+                $(".fnani").css("color","rgb(0, 114, 222)");
+                $(".fntxb").focus();
+                $(".fnani").animate({
+                "font-size":"16px", top : "368px", height : "20px"                                   
+            });
+                                    
+        });        
+        $(".fntxb").blur(function(){
+            if(document.getElementById("fnvalue").value == ""){
+                $(".fntxb").css("border-bottom","1px solid gray");
+                $(".fnani").css("color","gray");          
+                $(".fnani").animate({
+                "font-size":"23px", top : "398px", height : "55px"                                                         
+                });
+            }else{
+                $(".fnani").css("color","gray");
+                $(".fntxb").css("border-bottom","1px solid gray");
+                $(".fntxb").css("color","gray");
+            }                     
+        });
+
+
+
+
+        $(".nameani").click(function(){
+                $(".nametxb").css("border-bottom","1px solid rgb(0, 114, 222)");
+                $(".nameani").css("color","rgb(0, 114, 222)");
+                $(".nametxb").focus();
+                $(".nameani").animate({
+                "font-size":"16px", top : "489px", height : "20px"                                   
+            });
+                                    
+        });        
+        $(".nametxb").blur(function(){
+            if(document.getElementById("namevalue").value == ""){
+                $(".nametxb").css("border-bottom","1px solid gray");
+                $(".nameani").css("color","gray");          
+                $(".nameani").animate({
+                "font-size":"23px", top : "519px", height : "55px"                                                         
+                });
+            }else{
+                $(".nameani").css("color","gray");
+                $(".nametxb").css("border-bottom","1px solid gray");
+                $(".nametxb").css("color","gray");
+            }                     
+        });
+
+
+
+        $(".yearani").click(function(){
+                $(".yeartxb").css("border-bottom","1px solid rgb(0, 114, 222)");
+                $(".yearani").css("color","rgb(0, 114, 222)");
+                $(".yeartxb").focus();
+                $(".yearani").animate({
+                "font-size":"16px", top : "615px", height : "20px"                                   
+            });
+                                    
+        });        
+        $(".yeartxb").blur(function(){
+            if(document.getElementById("yearvalue").value == ""){
+                $(".yeartxb").css("border-bottom","1px solid gray");
+                $(".yearani").css("color","gray");          
+                $(".yearani").animate({
+                "font-size":"23px", top : "645px", height : "50px"                                                         
+                });
+            }else{
+                $(".yearani").css("color","gray");
+                $(".yeartxb").css("border-bottom","1px solid gray");
+                $(".yeartxb").css("color","gray");
+            }                     
+        });
+
+
+
+
+        $(".monthani").click(function(){
+                $(".monthtxb").css("border-bottom","1px solid rgb(0, 114, 222)");
+                $(".monthani").css("color","rgb(0, 114, 222)");
+                $(".monthtxb").focus();
+                $(".monthani").animate({
+                "font-size":"16px", top : "615px", height : "20px"                                   
+            });
+                                    
+        });        
+        $(".monthtxb").blur(function(){
+            if(document.getElementById("monthvalue").value == ""){
+                $(".monthtxb").css("border-bottom","1px solid gray");
+                $(".monthani").css("color","gray");          
+                $(".monthani").animate({
+                "font-size":"23px", top : "645px", height : "50px"                                                         
+                });
+            }else{
+                $(".monthani").css("color","gray");
+                $(".monthtxb").css("border-bottom","1px solid gray");
+                $(".monthtxb").css("color","gray");
+            }                     
+        });
+
+        if(document.getElementById("res").value)
+
+
+
+        $(".dayani").click(function(){
+                $(".daytxb").css("border-bottom","1px solid rgb(0, 114, 222)");
+                $(".dayani").css("color","rgb(0, 114, 222)");
+                $(".daytxb").focus();
+                $(".dayani").animate({
+                "font-size":"16px", top : "615px", height : "20px"                                   
+            });
+                                    
+        });        
+        $(".daytxb").blur(function(){
+            if(document.getElementById("dayvalue").value == ""){
+                $(".daytxb").css("border-bottom","1px solid gray");
+                $(".dayani").css("color","gray");          
+                $(".dayani").animate({
+                "font-size":"23px", top : "645px", height : "50px"                                                         
+                });
+            }else{
+                $(".dayani").css("color","gray");
+                $(".daytxb").css("border-bottom","1px solid gray");
+                $(".daytxb").css("color","gray");
+            }                     
+        });
+    });          
+
+</script>
+   </body>
+</html>

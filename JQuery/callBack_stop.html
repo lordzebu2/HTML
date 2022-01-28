@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <style>
+            div{
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                position: absolute;
+            }
+            button{
+                margin-top: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+
+        <button>클릭</button>
+        <script>
+            $(function(){
+                $("button").click(function(){
+                    $("div").stop().animate({
+                        left:"200px"
+                    },500,function(){
+                        $("div").stop().animate({
+                            left:"0px"
+                        },500);
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

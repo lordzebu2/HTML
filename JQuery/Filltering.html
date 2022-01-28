@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8">
+      <title>Untitled</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="http://code.jquery.com/jquery-latest.js"></script>
+      <style>
+
+          .wrap{
+              width: 2000px;
+              height: 300px;
+              border: 1px solid black;
+              
+              display: inline-block;
+          }
+          .box{
+              width: 200px;
+              height: 200px;
+              border: 1px solid black;
+              margin-left: 20px;
+              display: inline-block;
+              
+              
+          }
+          p{
+              width: 130px;
+              height: 130px;
+              border: 1px solid black;
+              margin-left: 20px;  
+              display: inline-block;            
+          }
+          #p1{
+             margin: 30px; 
+          }
+      </style>
+   </head>
+   <body>
+      <div class="wrap">
+          <div class="box"></div>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <div class="box">
+            <p id="p1"></p>
+          </div>
+      </div>
+
+      <script>
+          $(document).ready(function(){
+              $(".wrap p").first().css("background-color","yellow");
+          });
+          
+      </script>
+   </body>
+</html>

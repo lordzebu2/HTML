@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8">
+      <title>Untitled</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+   </head>
+   <body>
+      가로<input type="text" id="w">
+      세로<input type="text" id="h">
+      X<input type="text" id="xx">
+      Y<input type="text" id="yy">
+      <input type="button" value="생성" id="red" onclick="move('red')">
+      <input type="button" value="생성" id="blue" onclick="move('blue')">
+      <input type="button" value="생성" id="green" onclick="move('green')">
+
+    <script>
+      function move(color){
+        var w = document.getElementById("w").value;
+        var h = document.getElementById("h").value;
+        var xx= document.getElementById("xx").value;
+        var yy= document.getElementById("yy").value;
+        // var c = document.getElementById("w").style.backgroundColor=color;
+
+        var box = document.createElement("div");
+
+        box.style.position="absolute";
+        box.style.width=w+"px";
+        box.style.height=h+"px";
+        box.style.top=xx+"px";
+        box.style.left=yy+"px";
+        box.style.backgroundColor=color;
+
+        document.body.appendChild(box);
+      }
+    </script>
+   </body>
+</html>

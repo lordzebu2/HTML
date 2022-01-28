@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8">
+      <title>Untitled</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script>
+          $(function(){
+              $("#p1").addClass("aqua");
+              $("#p2").removeClass("red");
+              $("#p3").toggleClass("green");
+              $("#p4").toggleClass("green"); //토글은 있으면 없에고, 없으면 있게해라.. 반대
+              $("#p6").text($("#p5").hasClass("yellow")); //여기에 노랑이잇나?
+          });
+
+          
+      </script>
+      <style>
+          .aqua{background-color: #0ff;}
+          .red{background-color: #f00;}
+          .green{background-color: green;}
+          .yellow{background-color: yellow;}
+      </style>
+   </head>
+   <body>
+      <p id="p1">내용1</p>
+      <p id="p2" class="red">내용2</p>
+      <p id="p3">내용3</p>
+      <p id="p4" class="green">내용4</p>
+      <p id="p5" class="yellow">내용5</p>
+      <p id="p6"></p>
+   </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8">
+      <title>Untitled</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+          div{
+              border: 1px solid black;             
+          }
+      </style>
+   </head>
+   <body>
+      <script>
+          var ea = prompt("상자의 개수");
+          var wh = prompt("상자의 크기");
+          var xyz = prompt("배치방법: 가로, 세로");
+          var color = prompt("배경색: 빨강 파랑");
+          var c;
+          switch(color){
+              case "빨강": c = "red"; break;
+              case "파랑": c = "blue"; break;
+              default: alert("그거아냐");              
+          }
+           var x;
+           switch(xyz){
+               case"가로": x = "inline-block"; break;
+               case"세로": x = "block"; break;
+               default: alert("그거아냐");
+           }
+
+        for(var i = 1; i<=ea; i++){
+            document.write("<div style = 'width:"+wh+"px; height:"+wh+"px; background-color:"+c+"; display:"+x+";'></div>");
+        }    
+        
+
+      </script>
+   </body>
+</html>

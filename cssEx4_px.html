@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">    
+    <title>Document</title>
+
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+        button{
+            width: 200px;
+            height: 200px;
+        }
+        input[type=button]{
+            width: 100px;
+            height: 100px;
+            background-color: greenyellow;
+        }
+
+    </style>
+</head>
+<body>
+    <pre>
+        css 에서는 반드시 숫자를 입력할 경우 단위가 필수!!
+        기본 단위 px 로 잡습니다.
+        full hd    1920 x 1080 <= 화면에 나와있는 점의 개수
+        hd
+        uhd
+        
+        css는 무조건 태그 기준으로 합니다. 그런데 보통의 태그들은 다 자기만의 의미가 있고, 속성이 있다.
+        그래서 우리는 의미없이 묶어줄 수 있는 빈 태그가 필요하다.
+        블록태그-div  하는 인라인태그-span 의 2가지 태그가 있다.
+        모든 블록태그는 크기 설정이 가능! 모든 인라인 태그는 크기설정이 안됨!!!
+        특이한 케이스들이 있는데 inline-block 타입의 태그들이 있다. 가로로 되면서 크기가 먹는다.
+    </pre>
+
+    <div></div>
+    <input type="button" value="인풋태그"> <!--아무런 기능이 없다.-->
+    <button>버튼태그</button><!-- input type="submit" 랑 동일-->
+
+
+</body>
+</html>

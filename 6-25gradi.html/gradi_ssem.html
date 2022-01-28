@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>    
+    <title>Document</title>
+    <style>
+        /*
+            블록태그는 기본적으로 가로 길이를 안주면 무조건 100%. 안에 내용이 있다면 좌우로 공간이 있으니 text-align이 가능
+            인라인태그는 기본적으로 길이가 없으므로 무조건 pack(최소 사이즈) 싸이즈 이다. 그러므로 text-align해도 티가 안남.
+        */
+        div{
+            border: 1px solid black;
+            height: 50px;
+        }
+        .div1{            
+            /* 그라데이션 */
+            background-image: linear-gradient( to right, yellow, red);
+                                       /* 방향, 시작색, 끝색 */
+        }
+        .div2{            
+            /* 그라데이션 */
+            background-image: linear-gradient( to left, yellow, red);
+                                       /* 방향, 시작색, 끝색 */
+        }
+        .div3{            
+            /* 그라데이션 */
+            background-image: linear-gradient( to top, yellow, red);
+                                       /* 방향, 시작색, 끝색 */
+        }
+        .div4{            
+            /* 그라데이션 */
+            background-image: linear-gradient( to bottom, yellow, red);
+                                       /* 방향, 시작색, 끝색 */
+        }
+        .div5{            
+            /* 그라데이션 */
+            background-image: linear-gradient(45deg, yellow, red);
+                                       /* 방향, 시작색, 끝색 */
+        }
+        .div6{
+            /* 그라데이션 */
+            background-image: linear-gradient(to right, red, orange, yellow,green,blue,navy, purple);
+                                       /* 방향, 시작색, 끝색 */
+        }
+        .div7{
+            /* 그라데이션 */
+            background-image: repeating-linear-gradient(to right, yellow 10%, green 20%);
+                                       /* 방향, 시작색, 끝색 */
+        }
+        .div8{
+            /* 그라데이션 */
+            background-image: linear-gradient(to right, yellow 50%, green 50%);
+            background-image: linear-gradient(to purple, orange);
+                                       /* 방향, 시작색, 끝색 */
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    <div class="div4"></div>
+    <div class="div5"></div>
+    <div class="div6"></div>
+    <div class="div7"></div>
+    <div class="div8"></div>
+    
+</body>
+</html>

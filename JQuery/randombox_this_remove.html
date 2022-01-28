@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <style>
+            #wrap{
+                width: 500px;
+                height: 500px;
+                border: 1px solid black;
+                position: relative;
+            }
+            #wrap .input{
+                width: 200px;
+                height: 30px;
+                border: 1px solid black;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            #wrap .input input[type=text]{
+                width: 140px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="input">
+                <input type="text">
+                <input type="button" value="생성">
+            </div>
+        </div>
+        <script>
+            $(function(){
+                var cnt=0;
+                var color=["red","blue","green"];                
+
+                $("input[type=button]").click(function(){
+
+                    $(".cbox").remove();
+
+                    cnt = $("input[type=text]").val();
+
+                    for(var i=0;i<cnt;i++){
+                        var ranCol = Math.floor(Math.random()*3);
+                        var ranWidth = Math.floor(Math.random()*100);
+                        var ranHeight = Math.floor(Math.random()*100);
+                        var ranTop = Math.floor(Math.random()*400);
+                        var ranLeft = Math.floor(Math.random()*400);
+                        // for문으로 cnt 만큼 밑에 부분 반복
+                        var box=$("<div></div>");
+                        // <div class="cbox"></div>
+                        box.attr("class","cbox");// 속성추가
+
+                        box.css("position","absolute");
+                        box.css("background-color",color[ranCol]);// 컬러랜덤
+                        box.css("width",ranWidth+"px");// 크기 랜덤
+                        box.css("height",ranHeight+"px");// 높이 랜덤
+                        box.css("top",ranTop+"px"); // top 랜덤
+                        box.css("left",ranLeft+"px");// left 랜덤
+                        $("#wrap").append(box);
+                    }
+                });
+
+                $(document).on("click",".cbox",function(){
+                    // 이벤트, 객체, 함수
+                    //alert(1);
+                    $(this).remove();
+                    // this는 내가 눌렀던 시점에서 그 녀석. 내가 클릭한 그 객체를 의미합니다.
+                });
+            });
+        </script>
+    </body>
+</html>

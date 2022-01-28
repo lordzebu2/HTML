@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body onload="getParents()">
+        <form name="childForm">
+            이름<input type="text" name="cname"><br>
+            확인<input type="text" name="result"><br>
+            <input type="button" value="전송" onclick="setParents()">
+        </form>
+
+        <script>
+            function getParents(){
+                //alert(opener.document.myForm.fname.value);
+                document.childForm.cname.value=opener.document.myForm.fname.value;
+            }
+            function setParents(){
+                opener.document.myForm.result.value=document.childForm.result.value;
+                self.close();
+            }
+        </script>
+    </body>
+</html>

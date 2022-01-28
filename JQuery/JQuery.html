@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .menu{
+                border: 1px solid black;
+            }
+            .menu{
+                display: flex;
+            }
+            li{
+                list-style: none;
+            }
+            .menu ul{
+                border: 1px solid red;                
+            }
+            .menu>li{
+                position: relative;
+                margin-right: 20px;
+            }
+            .menu ul{
+                width: 50px;
+                position: absolute;
+                padding: 0;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="menu">
+            <li class="sub1">메뉴1
+                <ul>
+                    <li>서브1</li>
+                    <li>서브2</li>
+                </ul>
+            </li>
+            <li class="sub2">메뉴2
+                <ul>
+                    <li>서브3</li>
+                    <li>서브4</li>
+                </ul>
+            </li>
+        </ul>
+
+        <script  src="http://code.jquery.com/jquery-latest.min.js"></script> <!--무조건 최신버전-->
+        <script>
+            $(function(){
+                $(".sub1").mouseenter(function(){
+                    $(".sub1>ul").slideDown(500);
+                });
+                $(".sub2").mouseenter(function(){
+                    $(".sub2>ul").slideDown(500);
+                });
+                $(".sub1").mouseleave(function(){
+                    $(".sub1>ul").slideUp(500);
+                });
+                $(".sub2").mouseleave(function(){
+                    $(".sub2>ul").slideUp(500);
+                });
+            });
+        </script>
+    </body>
+</html>

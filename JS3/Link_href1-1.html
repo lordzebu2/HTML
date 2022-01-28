@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>    
+</head>
+
+<body>
+    <form name="myForm">
+        Name: <input type="text" name="fname"> 
+        <!--<input type="submit" value="전송">-->
+        <input type="button" value="전송"  onclick="sub()">
+    </form>
+    <!--
+        form 속서중 action은 submit 버튼을 누르면 이동할 페이지이다.
+        a href와의 차이는 값을 가지고 가는가? 아닌가의 차이
+    -->
+
+    <script>
+        function sub(){
+            
+            if(document.myForm.fname.value == ""){
+                 alert("아이디는 필수!");
+                 document.myForm.fname.focus();
+            }else{
+                document.myForm.action="Linl_href1.html";
+                document.myForm.submit();
+            }
+        }
+    </script>
+</body>
+
+</html>

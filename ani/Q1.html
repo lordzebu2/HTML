@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>   
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 1080px;
+            height: 600px;
+            position: relative;
+            border: 1px solid black;
+            margin: 0 auto;
+            
+        }
+        .box1{
+            width: 500px;
+            margin: 0 auto;
+            height: 80px;
+            border: 1px solid black;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bolder;
+            background-color: cornflowerblue;
+            padding-bottom: 20px;
+            position: absolute;           
+            top: 210px;
+            left: 50%;
+            transform: translate(-50%);
+
+        }
+        .box2{
+            width: 70px;
+            height: 30px;
+            background-color: cyan;
+            position: absolute;
+            top: 10%;
+            animation: move 1s infinite;
+            animation-direction: alternate;
+            z-index: 1;
+        }
+        .box3{
+            width: 10px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            left: 50%;
+        }
+
+         .box1:hover + .box2{ /*box1바로 밑에 있는 */
+            animation-play-state: paused;            
+        }
+        .box1:active{
+            animation-play-state: running;
+        }
+
+        @keyframes move{
+            from{left: 0px;}
+            to{left: 93%;}
+        }
+    </style>
+</head>
+<body>
+    <div class = "wrap">
+        <div class = "box1"><p>멈춰!</p></div>
+        <div class = "box2"></div>
+        <div class = "box3"></div>
+    </div>
+</body>
+</html>

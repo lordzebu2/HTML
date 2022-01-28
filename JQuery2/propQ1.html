@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <style>
+            #wrap{
+                width: 800px;
+                margin: 0 auto;
+                border: 1px solid black;
+            }
+            .choose{
+                display: flex;
+                justify-content: space-between;
+            }
+            .choose>div{
+                width: 30%;
+            }
+            .choose>div div{
+                width: 100%;
+                height: 250px;
+            }
+            .choose>div div img{
+                width: 100%;
+                height: 100%;
+            }
+            .choose>div input{
+                width: 30px;
+                height: 30px;
+            }
+            button{
+                width: 100%;
+                height: 50px;
+            }
+            .result{
+                display: flex;
+                justify-content: space-between;
+            }
+            .result img{
+                width: 200px;
+                height: 250px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="choose">
+                <div>
+                    <div><img src="aoa1.png" class="ck1"></div>
+                    <input type="checkbox" class="ck1">
+                </div>
+                <div>
+                    <div><img src="aoa2.png"></div>
+                    <input type="checkbox">
+                </div>
+                <div>
+                    <div><img src="aoa3.png"></div>
+                    <input type="checkbox">
+                </div>
+            </div>
+            <button>확인</button>
+            <div class="result">
+                <img><img><img>
+            </div>            
+        </div>
+        <script>
+            $(function(){
+                $("button").click(function(){                    
+                    /*
+                    if($(".choose div").eq(0).children("input").prop("checked")==true){
+                        $(".result img").eq(0).attr("src","aoa1.png");
+                    }*/
+                    /*
+                    if($("input").eq(0).prop("checked")==true){
+                        $(".result img").eq(0).attr("src","aoa1.png");                        
+                    }*/
+                    /*
+                    if($(".ck1").prop("checked")==true){
+                        $(".result img").eq(0).attr("src","aoa1.png"); 
+                    }*/
+                    /*
+                    if($(".ck1").prop("checked")==true){
+                        $(".result img").eq(0).attr("src",$(".ck1").parent().find("img").attr("src")); 
+                    }*/
+
+                    if($(".ck1").eq(1).prop("checked")==true){
+                        $(".result img").eq(0).attr("src",$(".ck1").eq(0).attr("src")); 
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

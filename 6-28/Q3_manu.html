@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <title>Document</title>
+    <style>
+        *,html,body{
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+            width: 200px;
+            height: 500px;
+            border: 1px solid black;
+            background-color: cornflowerblue;
+            margin: 0 auto;
+        }
+        .sub{
+            border: 1px solid red;
+        }
+        .menu{
+           
+            width: 100px;
+        }
+        .menu ul{
+            display: none;           
+        }
+        .menu>li{
+            position: relative;
+            
+            border: 1px solid black;
+            margin-bottom: 10px;
+            
+        }
+        .menu>li:hover ul{
+            display: block;
+        }
+        ul{            
+            list-style: none;
+            text-align: center;           
+        }
+    </style>
+</head>
+<body>
+    <div class = "wrap">
+        <ul class = "menu">
+            <li>메뉴1
+                <ul class = "sub">
+                    <li>서브1</li>
+                    <li>서브2</li>
+                    <li>서브</li>
+                </ul>
+            </li>
+            <li>메뉴2
+                <ul class = "sub">
+                    <li>서브3</li>
+                    <li>서브4</li>
+                    <li>서브</li>
+                </ul>
+            </li>
+            <li>메뉴3
+                <ul class = "sub">
+                    <li>서브5</li>
+                    <li>서브6</li>
+                    <li>서브</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

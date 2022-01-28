@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>    
+    <title>Document</title>
+    <style>
+        *,html,body{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            border: 1px solid red;
+        }
+        li{
+            list-style: none;
+        }
+        .menu>li{
+            display: inline-block;
+            border: 1px solid blue;
+            position: relative;
+        }
+        .sub{
+            position: absolute;
+            /*절때로 위치가 현 ul을 싸고 있는 li를 벗어나지 말것!*/            
+        }
+        .sub{
+            width: 50px;
+            background-color: white;
+            display: none;
+        }
+        .menu>li:hover ul{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li>메뉴1
+            <ul class="sub">
+                <li>서브1</li>
+                <li>서브2</li>
+            </ul>
+        </li>
+        <li>메뉴2
+            <ul class="sub">
+                <li>서브3</li>
+                <li>서브4</li>
+            </ul>
+        </li>
+    </ul>
+    여기는 메뉴 확인할려고 합니다.
+</body>
+</html>

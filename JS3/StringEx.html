@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8">
+      <title>Untitled</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+          div{
+              border: 1px solid black;
+          }
+      </style>
+   </head>
+   <body>
+      문자열의 길이를 가져오기<div id="test1"></div><br>
+      문자의 위치를 가져오기<div id="test2"></div><br>
+      문자의 위치를 뒤에서 가져오기<div id="test3"></div><br>
+      문자의 위치를 특정위치에서부터 찾기<div id="test4"></div><br>
+      문자의 위치를 가져오기<div id="test5"></div><br>
+      문자의 위치를 가져오기<div id="test6"></div><br>
+      문자의 위치를 가져오기<div id="test7"></div><br>
+      문자의 위치를 가져오기<div id="test8"></div><br>
+      문자의 위치를 가져오기<div id="test9"></div><br>
+      문자의 위치를 가져오기<div id="test10"></div><br>
+      문자의 위치를 가져오기<div id="test11"></div><br>
+
+
+
+      <script>
+        var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var sln = txt.length;
+        document.getElementById("test1").innerHTML=sln;
+
+        var str = "Please locate where 'locate' occurs!";
+        var pos = str.indexOf("locate");
+        document.getElementById("test2").innerHTML=pos;
+
+        var str = "Please locate where 'locate' occurs!";
+        var pos = str.lastIndexOf("locate");
+        document.getElementById("test3").innerHTML=pos;
+
+        var str = "Please locate where 'locate' occurs!";
+        var pos = str.indexOf("locate",15);
+        document.getElementById("test4").innerHTML=pos;
+
+        // http://kio.zc.bz/Lecture/regexp.html 정규식주소
+      </script>
+   </body>
+</html>

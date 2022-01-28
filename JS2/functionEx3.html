@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            #red{
+                background-color: red;
+            }
+            #blue{
+                background-color: blue;
+            }
+            #green{
+                background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+        가로 <input type="text" id="ga"><br>
+        세로 <input type="text" id="se"><br>
+        x <input type="text" id="xx"><br>
+        y <input type="text" id="yy"><br>
+        <input type="button" id="red" value="생성" onclick="makebox('red')">
+        <input type="button" id="blue" value="생성" onclick="makebox('blue')">
+        <input type="button" id="green" value="생성" onclick="makebox('green')">
+        <script>
+            function makebox(col){
+                var ga = document.getElementById("ga").value;
+                var se = document.getElementById("se").value;
+                var xx = document.getElementById("xx").value;
+                var yy = document.getElementById("yy").value;
+
+                var box = document.createElement("div");
+                box.style.position="absolute";
+                box.style.width=ga+"px";
+                box.style.height=se+"px";
+                box.style.left=xx+"px";
+                box.style.top=yy+"px";
+                box.style.backgroundColor=col;
+
+                document.body.appendChild(box);
+            }
+            
+
+        </script>
+    </body>
+</html>

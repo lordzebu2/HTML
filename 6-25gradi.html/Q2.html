@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,html,body{
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap{
+            width: 1080px;
+            height: 1070px;            
+            margin: 0 auto;
+           
+        }
+
+         .main{
+            margin-bottom: 10px;
+        }
+        .box{
+            position: absolute;
+            
+        }
+
+        #panel{
+            width: 1080px;
+            height: 220px;
+            border: 3px solid black;
+        }
+        #topmenu{
+            width: 1080px;
+            height: 90px;
+            border: 3px solid black;
+            top: 240px;
+            
+        }
+        #leftmenu{
+            width: 300px;
+            height: 490px;
+            border: 3px solid black;
+            top: 340px;
+            margin-bottom: 20px;            
+            
+        }
+        #menu{
+            position: static;
+            margin-bottom: 20px;
+            border: 3px solid black;
+        }
+
+        #consol{
+            width: 760px;
+            height: 490px;
+            border: 3px solid black;
+            top: 340px;
+            right: 726px;
+           
+        }
+        #bottom{
+            width: 1080px;
+            height: 90px;
+            border: 3px solid black;
+            bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class = "wrap">
+        <div class = "main">       
+            <div class = "box" id = "panel"></div>
+            <div class = "box" id = "topmenu">메뉴1 메뉴2 메뉴3</div>
+            <div class = "box" id = "leftmenu">
+                <div class ="menu">메뉴1</div>
+                <div class ="menu">메뉴2</div>
+                <div class ="menu">메뉴3</div>
+            </div>
+            <div class = "box" id = "consol"></div>
+            <div class = "box" id = "bottom"></div>  
+        </div>       
+    </div>
+</body>
+</html>
